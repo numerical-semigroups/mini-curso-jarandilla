@@ -1,0 +1,114 @@
+---
+title: "Factorizaciones"
+format: html
+---
+
+
+Sea $S=\langle 2,3\rangle$. El entero 6 está en $S$, y
+$6=2\cdot 3=3\cdot 2$. Tanto 2 como 3 son irreducibles en $S$ en el
+sentido de que no se pueden obtener como combinación de otros elementos
+de $S$. Por tanto, 6 admite dos factorizaciones o expresiones
+esencialmente distintas en $S$ como combinación de irreducibles. Nótese
+además que 2 “divide” a 6 en $S$, ya que $2+4=6$ y $4\in S$. Como
+$6=3+3$ y $2$ no divide a $3$, pues $1\not\in S$, tenemos que 2 es un
+irreducible que no es “primo”. Lo mismo le ocurre al 3. En general, en
+un semigrupo numérico, sus generadores minimales son sus elementos
+irreducibles, y ninguno de ellos es primo. Es más en un semigrupo
+numérico (salvo $\mathbb{N}$) siempre hay elementos con más de una
+factorización. Esto se debe a que el concepto de factorización está
+íntimamente ligado al de presentación, y en cuanto que tengamos
+relatores definiendo el semigrupo, tendremos factorizaciones distintas
+para un mismo elemento.
+
+## Factorizaciones
+
+Dado un semigrupo numérico $S$ generado minimalmente por
+$\lbrace n_1,\ldots,n_k\rbrace$ , definimos como hicimos anteriormente
+
+$$\varphi: \mathbb{N}^k \to S, \ \varphi(a_1,\ldots,a_k)=a_1n_1+\cdots+a_kn_k,$$
+
+y que usamos para hablar de presentaciones para $S$. La gente que
+estudia factorizaciones le suele llamar *homomorfismo de factorización*
+de $S$. Dado $n\in S$, se define el conjunto de factorizaciones de $n$
+como $\mathsf{Z}n)=\varphi^{-1}(n)$. Así en el ejemplo anterior las
+factorizaciones de 6 son $\mathsf{Z}(s)=\lbrace (3,0),(0,2)\rbrace$ . Esto es, nos quedamos
+con los exponentes de los irreducibles que aparecen en las
+factorizaciones. Los conjuntos de factorizaciones de un elemento $n$ en
+$S$ se corresponden con las soluciones no negativas de
+$n_1x_1+\cdots+n_kx_k=n$, y por tanto son siempre finitos.
+
+## Invariantes basados en longitud de factorización
+
+La *longitud* de una factorización $a=(a_1,\ldots,a_k)$ de $n$ (y por
+tanto $a_1n_1+\cdots+a_kn_k=n$) es $|a|=a_1+\cdots+a_k$, esto es, el
+número de irreducibles que ocurren en dicha factorización. Podemos
+definir el *conjunto de longitudes de factorizaciones* de $n$ como
+$\lbrace  l\mid \hbox{existe}\ a\in \mathsf{Z}n), |a|=l\rbrace$ . Se sabe gracias a los
+trabajos de Gerlodinger, Halter-Koch y en general de la escuela de Graz
+que estos conjuntos tienen una estructura que ellos han llamado
+multiprogresiones casi aritméticas. Para el semigrupo $S$ se define el
+conjunto de longitudes como el conjunto de conjuntos de longitudes de
+sus elementos. Chapman y sus alumnos han probado recientemente el el
+conjunto de factorizaciones de $S$ no determina de forma unívoca a $S$.
+
+Si $\lbrace l_1 < \cdots < l_t\rbrace$  es el conjunto de longitudes de factorizaciones
+de $n$ en $S$, se define
+$\Delta(n)=\lbrace l_2-l_1,l_3-l_2,\cdots,l_t-l_{t-1}\rbrace$ , y $\Delta(S)$ es la
+unión de todos los conjuntos delta de sus elementos. Chapman y sus
+alumnos han calculado en varios casos este conjunto, y siguen trabajando
+en ello.
+
+Si todas las longitudes de un elemento dado de un monoide tienen la
+misma longitud, entonces se dice que el monoide tiene *longitud media
+única*. Claramente ningún semigrupo numérico que no sea $\mathbb{N}$ va a tener
+longitud media única. Basta tomar $n_1n_k$ que tiene al menos dos
+factorizaciones, una de longitud $n_k$ y la otra $n_1$. Una forma de
+medir cuánto nos alegamos de la unicidad en las longitudes de
+factorizaciones es mediante la elasticidad de una factorización,
+concepto que fue introducido por Valenza. Se define para $n$ en $S$,
+$\operatorname{L}(n)$ como el máximo (en general es el supremo, pero hemos visto que
+en nuestro caso el conjunto de factorizaciones es finito) de las
+longitudes de las factorizaciones de $n$, y $\operatorname{l}(n)$ como el mínimo. La
+*elasticidad* de las factorizaciones de $n$ se define como
+$\rho(n)=\frac{\operatorname{L}(n)}{\operatorname{l}(n)}$. Para el semigrupo $S$, se define su
+elasticidad como $\rho(S)=\sup_{n\in S}\rho(n)$. Se demuestra que ese
+supremo es un máximo y que además es un número racional, que se puede
+calcular a partir de los soluciones enteras no negativas irreducibles de
+la ecuación diofántica $n_1x_1+\cdots+n_kx_k=n_1y_1+\cdots+n_ky_k$. En
+este caso $\rho(S)=\frac{n_k}{n_1}$.
+
+## Invariantes basados en distancia entre factorizaciones
+
+Dadas dos factorizaciones $a=(a_1,\ldots,a_k)$ y $b=(b_1,\ldots,b_k)$ de
+$n$ en el semigrupo numérico $S=\langle n_1,\ldots,n_k\rangle$,
+definimos el *máximo común divisor* de ambas como
+$a\wedge b=(\min\lbrace a_1,b_1\rbrace ,\ldots,\min\lbrace a_k,b_k\rbrace ).$ La *distancia*
+entre $a$ y $b$ es $\operatorname{dist}(a,b)=\max\lbrace |a-(a\wedge b)|,|b-(a\wedge b)|\rbrace$ 
+(esta función según ha demostrado Geroldinger cumple las propiedades
+básicas de una distancia).
+
+Si bien la distancia entre dos factorizaciones de $n$ puede ser muy
+grande, puede que exista una cadena de factorizaciones de $n$, de forma
+que dos factorizaciones consecutivas disten relativamente poco. Decimos
+que una cadena $z_1,\ldots,z_t$ de factorizaciones de $n$ es una
+*$N$-cadena* si la distancia entre $z_i$ y $z_{i+1}$ no supera $N$ para
+todo $i$. El *grado de catenariedad* de $n$ se define como el mínimo de
+los $N$ tales que para cualesquiera dos factorizaciones $a$ y $b$ de $n$
+existe una $N$-cadena $z_1,\ldots,z_t$ de forma que $a=z_1$ y $b=z_t$.
+El grado de catenariedad de $S$ se define como el supremo de los grados
+de catenariedad de los elementos de $S$. Se puede probar que ese supremo
+es de hecho un máximo, y que se alcanza en un elemento de la forma
+$w+n_i$ con $w$ un elemento del Apéry de la multiplicidad de $S$ en $S$,
+y $n_i$ un generador minimal de $S$. Una vez más, el conjunto de Apéry
+vuelve a mostrar su sorprendente utilidad.
+
+Existen otros invariantes como el grado de amansamiento, que también
+pueden ser calculados en función de determinados conjuntos de Apéry.
+
+## El paquete [`numericalsgps`](https://www.gap-system.org/Packages/numericalsgps.html) para [`GAP`](https://www.gap-system.org)
+
+Terminaremos esta sesión dando un breve paseo por el paquete
+[`numericalsgps`](https://www.gap-system.org/Packages/numericalsgps.html) para [`GAP`](https://www.gap-system.org). En la página oficial del paquete
+aparece un detallado manual de las funciones implementadas. 
+
+En [numerical-semigroups.github.io](https://numerical-semigroups.github.io) se pueden encontrar ejemplos, cursos y tutoriales relacionados con este paquete y con los semigrupos numéricos en general.

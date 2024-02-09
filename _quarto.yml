@@ -1,0 +1,25 @@
+project:
+  type: website
+
+website:
+  title: "Mini-curso semigrupos numéricos"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Inicio
+  sidebar: 
+    style: "docked"
+    contents:
+      - elementos-notables.qmd
+      - grandes-familias.qmd
+      - factorizaciones.qmd  
+      - bibliografia.qmd      
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

@@ -1,0 +1,16 @@
+---
+title: "Bibliografia"
+format: html
+---
+
+Es difícil recoger una lista completa de referencias relativas a semigrupos numéricos. 
+
+Nuestro compañero Jorge Ramirez Alfonsín ha hecho un gran trabajo en su libro. 
+
+Barucci, Dobbs and Fontana han escrito lo que para nosotros es un magnífico monográfico en el que se resaltan las conexiones entre semigrupos numéricos y dominios locales uno dimensionales, el cual puede ser utilizado además como diccionario para los invariantes existentes en estos dos mundos. 
+
+Barucci escribió una bonita revisión sobre anillos de semigrupo que aparecerá en un libro en honor a Gilmer (al cual todos los que trabajamos en anillos de semigrupo estamos en deuda). 
+
+En nuestro libro (escrito con Rosales) “Numerical semigroups” hemos intentado recopilar las herramientas básicas para empezar a trabajar en semigrupos numéricos. 
+
+Nuestro libro "Numerical semigroups and applications" (en su segunda edición con A. Asssi y  M. D'Anna)  intenta además recoger algunas de las aplicaciones de los semigrupos en otras áreas de las matemáticas.
