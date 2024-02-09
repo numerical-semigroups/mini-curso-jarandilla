@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Mini-curso semigrupos numéricos - Elementos notables</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Mini-curso semigrupos numéricos</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./elementos-notables.html">Elementos notables</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./elementos-notables.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Elementos notables</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./grandes-familias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Grandes familias</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./factorizaciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Factorizaciones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bibliografia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliografia</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#generadores-una-primera-opción-para-representar-un-semigrupo" id="toc-generadores-una-primera-opción-para-representar-un-semigrupo" class="nav-link active" data-scroll-target="#generadores-una-primera-opción-para-representar-un-semigrupo">Generadores, una primera opción para representar un semigrupo</a></li>
+  <li><a href="#multiplicidad-número-de-frobenius-huecos-y-tipo-cohen-macaulay" id="toc-multiplicidad-número-de-frobenius-huecos-y-tipo-cohen-macaulay" class="nav-link" data-scroll-target="#multiplicidad-número-de-frobenius-huecos-y-tipo-cohen-macaulay">Multiplicidad, número de Frobenius, huecos y tipo (Cohen-Macaulay)</a></li>
+  <li><a href="#conjuntos-de-apéry-sin-duda-la-mejor-herramienta-para-hacer-cálculos-en-un-semigrupo-numérico" id="toc-conjuntos-de-apéry-sin-duda-la-mejor-herramienta-para-hacer-cálculos-en-un-semigrupo-numérico" class="nav-link" data-scroll-target="#conjuntos-de-apéry-sin-duda-la-mejor-herramienta-para-hacer-cálculos-en-un-semigrupo-numérico">Conjuntos de Apéry, sin duda la mejor herramienta para hacer cálculos en un semigrupo numérico</a></li>
+  <li><a href="#el-conjunto-de-semigrupos-numéricos-con-multiplicidad-fija" id="toc-el-conjunto-de-semigrupos-numéricos-con-multiplicidad-fija" class="nav-link" data-scroll-target="#el-conjunto-de-semigrupos-numéricos-con-multiplicidad-fija">El conjunto de semigrupos numéricos con multiplicidad fija</a></li>
+  <li><a href="#saltos-fundamentales-una-alternativa-para-representar-un-semigrupo-numérico" id="toc-saltos-fundamentales-una-alternativa-para-representar-un-semigrupo-numérico" class="nav-link" data-scroll-target="#saltos-fundamentales-una-alternativa-para-representar-un-semigrupo-numérico">Saltos fundamentales, una alternativa para representar un semigrupo numérico</a></li>
+  <li><a href="#los-sobre-semigrupos-de-un-semigrupo-numérico" id="toc-los-sobre-semigrupos-de-un-semigrupo-numérico" class="nav-link" data-scroll-target="#los-sobre-semigrupos-de-un-semigrupo-numérico">Los sobre-semigrupos de un semigrupo numérico</a></li>
+  <li><a href="#presentaciones-la-opción-generadores-relatores-para-describir-un-semigrupo-numérico" id="toc-presentaciones-la-opción-generadores-relatores-para-describir-un-semigrupo-numérico" class="nav-link" data-scroll-target="#presentaciones-la-opción-generadores-relatores-para-describir-un-semigrupo-numérico">Presentaciones, la opción generadores-relatores para describir un semigrupo numérico</a></li>
+  <li><a href="#algo-sobre-anillos-de-semigrupo" id="toc-algo-sobre-anillos-de-semigrupo" class="nav-link" data-scroll-target="#algo-sobre-anillos-de-semigrupo">Algo sobre anillos de semigrupo</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Elementos notables</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Un <em>semigrupo numérico</em> es un conjunto de enteros cerrado para la suma, que contiene al cero, y cuyo complemento en <span class="math inline">\(\mathbb{N}\)</span> es finito (<span class="math inline">\(\mathbb{N}\)</span> es el conjunto de enteros no negativos). La condición de complemento finito es equivalente a imponer que el máximo común divisor de sus elementos sea uno. El hecho de que se emplee la palabra semigrupo para denotar estos conjuntos ha levantado últimamente cierta controversia, ya que estos conjuntos son de por sí monoides. Es por ello que algunos autores prefieren usar el término monoide numérico.</p>
+<p>Dado un submonoide <span class="math inline">\(S\)</span> de <span class="math inline">\(\mathbb{N}\)</span> (respecto de la suma), podemos considerar el conjunto <span class="math inline">\(\lbrace s/d : s\in S\rbrace\)</span> , con <span class="math inline">\(d\)</span> el máximo común divisor de los elementos de <span class="math inline">\(S\)</span>, el cual resulta tener complemento finito en <span class="math inline">\(\mathbb{N}\)</span>, y por tanto es un semigrupo numérico. De esta manera se tiene que cualquier submonoide de <span class="math inline">\(\mathbb{N}\)</span> es isomorfo a un (único) semigrupo numérico.</p>
+<p>Es probable que los semigrupos numéricos apareciesen al estudiar soluciones no negativas y enteras de una ecuación diofántica lineal. Dados enteros positivos y relativamente primos <span class="math inline">\(a_1,\ldots,a_n\)</span>, el conjunto de elementos <span class="math inline">\(b\in \mathbb{N}\)</span> tales que <span class="math inline">\(a_1 x_1+\cdots+a_n x_n=b\)</span> tiene al menos una solución entera no negativa es un semigrupo numérico. De hecho, uno de los primeros problemas relacionado con semigrupos numéricos fue determinar, en términos de <span class="math inline">\(a_1,\ldots,a_n\)</span>, cuál es el mayor entero para el que no existe una solución de la anterior ecuación. Éste se conoce como el problema de Frobenius, y parece ser que Frobenius lo propuso en una de sus clases.</p>
+<section id="generadores-una-primera-opción-para-representar-un-semigrupo" class="level2">
+<h2 class="anchored" data-anchor-id="generadores-una-primera-opción-para-representar-un-semigrupo">Generadores, una primera opción para representar un semigrupo</h2>
+<p>El conjunto <span class="math inline">\(S\)</span> de enteros para los que existe una solución entera y no negativa de <span class="math inline">\(a_1x_1+\cdots+ a_nx_n=b\)</span> puede ser expresado como <span class="math inline">\(\lbrace  a_1 x_1+\cdots+ a_n x_n  : x_1,\ldots,x_n\in \mathbb{N}\rbrace\)</span> , o incluso usando una notación más abreviada como <span class="math inline">\(\langle a_1,\ldots,a_n\rangle\)</span>. Decimos que <span class="math inline">\(\lbrace a_1,\ldots,a_n\rbrace\)</span> es un <em>sistema de generadores</em> de <span class="math inline">\(S\)</span>, o simplemente que <span class="math inline">\(\lbrace a_1,\ldots,a_n\rbrace\)</span> genera a <span class="math inline">\(S\)</span>. Si ningún subconjunto propio de <span class="math inline">\(\lbrace a_1,\ldots,a_n\rbrace\)</span> genera a <span class="math inline">\(S\)</span>, entonces es un sistema <em>minimal</em> de generadores de <span class="math inline">\(S\)</span>. Como <span class="math inline">\(S\)</span> cumple la propiedad cancelativa para la suma (<span class="math inline">\(a+b=a+c\)</span> implies <span class="math inline">\(b=c\)</span>), <span class="math inline">\(S\)</span> admite un único sistema minimal de generadores, que es <span class="math inline">\((S\setminus\lbrace 0\rbrace )\setminus ((S\setminus\lbrace 0\rbrace ) + (S\setminus\lbrace 0\rbrace ))\)</span>, y que además es finito. La cardinalidad de este conjunto es conocida como la <em>dimensión de inmersión</em> de <span class="math inline">\(S\)</span> (ya comentaremos después el por qué de esta extraña elección para denotar esa cantidad).</p>
+<p>Nótese que si <span class="math inline">\(S\)</span> está generado por <span class="math inline">\(\lbrace a_1,\ldots,a_n\rbrace\)</span> , entonces el máximo común divisor de <span class="math inline">\(\lbrace a_1,\ldots,a_n\rbrace\)</span> es uno (y al revés, si <span class="math inline">\(\lbrace a_1,\ldots,a_n\rbrace\)</span> es un conjunto de enteros con máximo común divisor uno, entonces el submonoide de <span class="math inline">\(\mathbb{N}\)</span> generado por <span class="math inline">\(\lbrace a_1,\ldots,a_n\rbrace\)</span> es un semigrupo numérico).</p>
+</section>
+<section id="multiplicidad-número-de-frobenius-huecos-y-tipo-cohen-macaulay" class="level2">
+<h2 class="anchored" data-anchor-id="multiplicidad-número-de-frobenius-huecos-y-tipo-cohen-macaulay">Multiplicidad, número de Frobenius, huecos y tipo (Cohen-Macaulay)</h2>
+<p>Tal y como hemos mencionado antes, se le atribuye a Frobenius el problema de determinar una fórmula para el entero más grande para el que no existe solución entera y no negativa de la ecuación <span class="math inline">\(a_1x_1+\cdots+ a_nx_n=b\)</span>. Con nuestra notación, esto equivale a encontrar <span class="math inline">\(\max(\mathbb{Z}\setminus S)\)</span>, con <span class="math inline">\(S=\langle a_1,\ldots,a_n\rangle\)</span> (<span class="math inline">\(\mathbb{Z}\)</span> es el conjunto de los números enteros). Es por esto que a esa cantidad se le conoce como el <em>número de Frobenius</em> de <span class="math inline">\(S\)</span>. Si <span class="math inline">\(g\)</span> es el número de Frobenius de <span class="math inline">\(S\)</span>, entonces <span class="math inline">\(g+(\mathbb{N}\setminus \lbrace 0\rbrace )\subset S\)</span>, y en particular, <span class="math inline">\(g+(S\setminus \lbrace 0\rbrace )\subseteq S\)</span>. Los enteros que no están en <span class="math inline">\(S\)</span> y verifican esta condición se denominan <em>pseudo-números de Frobenius</em> de <span class="math inline">\(S\)</span>, y su cardinalidad es el <em>tipo</em> (Cohen-Macaulay) de <span class="math inline">\(S\)</span>.</p>
+<p>Dado un semigrupo numérico <span class="math inline">\(S\)</span>, podemos definir en <span class="math inline">\(\mathbb{Z}\)</span> la siguiente relación de orden: <span class="math inline">\(a\leq_S b\)</span> si <span class="math inline">\(b-a\in S\)</span>. El conjunto de pseudo-números de Frobenius coincide con el conjunto de elementos maximales de <span class="math inline">\(\mathbb{Z}\setminus S\)</span> respecto de este orden.</p>
+<p>A los enteros positivos que no están en <span class="math inline">\(S\)</span> se les llama <em>saltos</em> (o huecos) de <span class="math inline">\(S\)</span>, y su cardinalidad es el <em>género</em> (o grado de singularidad) de <span class="math inline">\(S\)</span>. Si <span class="math inline">\(g\)</span> es el número de Frobenius de <span class="math inline">\(S\)</span>, algunos autores usan el nombre <em>hueco</em> para aquellos enteros <span class="math inline">\(x\)</span> tales que <span class="math inline">\(x\not \in S\)</span> y <span class="math inline">\(g-x\not\in S\)</span>. Todo hueco es un salto, pero puede haber saltos que no son huecos.</p>
+<p>El entero positivo más pequeño que pertenece a un semigrupo numérico es conocido como su <em>multiplicidad</em>. La multiplicidad de semigrupo numérico siempre está en su sistema minimal de generadores y es además una cota superior para su dimensión de inmersión. Esto se debe a que dos generadores minimales no pueden ser congruentes módulo la multiplicidad.</p>
+</section>
+<section id="conjuntos-de-apéry-sin-duda-la-mejor-herramienta-para-hacer-cálculos-en-un-semigrupo-numérico" class="level2">
+<h2 class="anchored" data-anchor-id="conjuntos-de-apéry-sin-duda-la-mejor-herramienta-para-hacer-cálculos-en-un-semigrupo-numérico">Conjuntos de Apéry, sin duda la mejor herramienta para hacer cálculos en un semigrupo numérico</h2>
+<p>Hemos comentado antes que dos generadores minimales de un semigrupo numérico no pueden ser congruentes módulo la multiplicidad, y claramente lo mismo ocurre respecto de cualquier elemento no nulo del semigrupo. Usando esa idea, podemos considerar, para un elemento no nulo <span class="math inline">\(n\)</span> de un semigrupo numérico <span class="math inline">\(S\)</span>, el conjunto <span class="math inline">\(\lbrace w_0,\ldots,w_{n-1}\rbrace\)</span> donde <span class="math inline">\(w_i\)</span> es el menor elemento en <span class="math inline">\(S\)</span> congruente con <span class="math inline">\(i\)</span> módulo <span class="math inline">\(n\)</span>. Se puede comprobar fácilmente que este conjunto es precisamente <span class="math inline">\(\lbrace s\in S : s-n\not\in S\rbrace\)</span> . Apéry fue el primero en explotar esta idea, y es por eso que este conjunto se conoce como el <em>conjunto de Apéry</em> de <span class="math inline">\(n\)</span> en <span class="math inline">\(S\)</span>. Si <span class="math inline">\(n\)</span> es la multiplicidad de <span class="math inline">\(S\)</span>, a veces a este conjunto se le llama una base estándar de <span class="math inline">\(S\)</span>. Como este conjunto aparece casi por doquier en nuestro estudio de semigrupos numéricos, vamos a introducir una notación para referirnos a él: <span class="math inline">\(\operatorname{Ap}(S,n)\)</span>.</p>
+<p>Los conjuntos de Apéry tienen muchas y muy buenas propiedades. Enumeramos a continuación algunas de ellas, aunque más adelante aparecerán otras no menos importantes.</p>
+<ul>
+<li><p>Todo entero <span class="math inline">\(x\)</span> se puede expresar de forma única como <span class="math inline">\(x=k n+w\)</span>, para algún <span class="math inline">\(k\in \mathbb{Z}\)</span> y <span class="math inline">\(w\in \operatorname{Ap}(S,n)\)</span>. Además, <span class="math inline">\(x\in S\)</span> si y sólo si <span class="math inline">\(k\geq 0\)</span>.</p></li>
+<li><p>Por tanto, si queremos saber si <span class="math inline">\(x\)</span> pertenece a <span class="math inline">\(S\)</span>, buscamos <span class="math inline">\(w\in \operatorname{Ap}(S,n)\)</span> tal que <span class="math inline">\(x\equiv w \mod n\)</span>; <span class="math inline">\(x\in S\)</span> si y sólo si <span class="math inline">\(w\leq x\)</span>.</p></li>
+<li><p>El número de Frobenius de <span class="math inline">\(S\)</span> es <span class="math inline">\(\max(\operatorname{Ap}(S,n))-n\)</span>.</p></li>
+<li><p>Podemos generalizar lo anterior de la siguiente forma. Un entero <span class="math inline">\(g\)</span> es un pseudo-número de Frobenius de <span class="math inline">\(S\)</span> si y sólo si <span class="math inline">\(g+n\)</span> es maximal en <span class="math inline">\(\operatorname{Ap}(S,n)\)</span> con respecto a <span class="math inline">\(\leq_S\)</span>. Así el tipo de <span class="math inline">\(S\)</span> es el cardinal del conjunto <span class="math inline">\({\rm Maximales}_{\leq_S}(\operatorname{Ap}(S,n))\)</span>.</p></li>
+<li><p>La fórmula de Selmer establece que el género de <span class="math inline">\(S\)</span> (número de saltos) es <span class="math inline">\(\frac{1}n\sum_{w\in\operatorname{Ap}(S,n)}w -\frac{n-1}2\)</span>.</p></li>
+</ul>
+<p>Por tanto, el conocimiento del conjunto de Apéry de un semigrupo numérico, respecto de cualquiera de sus elementos no nulos, resuelve el problema de pertenencia, determina el número de Frobenius del semigrupo, sus pseudo-números de Frobenius, su tipo y género.</p>
+</section>
+<section id="el-conjunto-de-semigrupos-numéricos-con-multiplicidad-fija" class="level2">
+<h2 class="anchored" data-anchor-id="el-conjunto-de-semigrupos-numéricos-con-multiplicidad-fija">El conjunto de semigrupos numéricos con multiplicidad fija</h2>
+<p>Un conjunto <span class="math inline">\(X\subseteq \mathbb{N}\)</span> es un <em>sistema completo módulo</em> un entero positivo <span class="math inline">\(m\)</span> si la cardinalidad de <span class="math inline">\(X\)</span> es <span class="math inline">\(m\)</span> y para cada <span class="math inline">\(i\in\lbrace 1,\ldots,m\rbrace\)</span> existe <span class="math inline">\(x_i\in X\)</span> congruente con <span class="math inline">\(i\)</span> módulo <span class="math inline">\(m\)</span>. Por definición, dado un semigrupo numérico <span class="math inline">\(S\)</span> y <span class="math inline">\(m\in S\setminus\lbrace 0\rbrace\)</span> , <span class="math inline">\(\operatorname{Ap}(S,m)\)</span> es un sistema completo módulo <span class="math inline">\(m\)</span>. Sin embargo, no todo sistema completo módulo un entero positivo <span class="math inline">\(m\)</span> es el conjunto de Apéry de un semigrupo numérico. Hace falta imponer algunas restricciones más. La primera es que <span class="math inline">\(x_0=0\)</span>, y además se tiene que verificar que <span class="math inline">\(x_i+x_j=x_{(i+j)\mod m}+k m\)</span> para algún entero no negativo <span class="math inline">\(k\)</span> (ya que <span class="math inline">\(x_i+x_j\)</span> tiene que estar en el semigrupo). Obsérvese también que si <span class="math inline">\(X\)</span> es el conjunto de Apéry de <span class="math inline">\(S\)</span> en <span class="math inline">\(m\)</span>, entonces <span class="math inline">\(X\cup\lbrace m\rbrace\)</span> genera a <span class="math inline">\(S\)</span> y por tanto lo determina completamente (recuérdense las buenas propiedades de los conjuntos de Apéry). Si uno quiere usar los conjuntos de Apéry para describir un semigrupo numérico, la elección más económica es tomar el conjunto de Apéry asociado a la multiplicidad, ya que éste es el menor entero positivo del semigrupo.</p>
+<p>Los elementos en dicho conjunto de Apéry se pueden codificar de la siguiente manera. Sea <span class="math inline">\(S\)</span> un semigrupo numérico y sea <span class="math inline">\(m\)</span> su multiplicidad. Si <span class="math inline">\(\operatorname{Ap}(S,m)=\lbrace w_0=0,w_1,\ldots,w_{m-1}\rbrace\)</span> con <span class="math inline">\(w_i\)</span> congruente con <span class="math inline">\(i\)</span> módulo <span class="math inline">\(m\)</span>, entonces <span class="math inline">\(w_i= k_i m +i\)</span> para algún entero no negativo <span class="math inline">\(k_i\)</span>. Como <span class="math inline">\(m\)</span> es la multiplicidad y <span class="math inline">\(m\leq w_i\in S\)</span>, si <span class="math inline">\(i\not=0\)</span>, se tiene <span class="math inline">\(k_i\geq 1\)</span>. La condición <span class="math inline">\(w_i+w_j=w_{(i+j)\mod m}+km\)</span> se puede reescribir como <span class="math inline">\((k_i+k_j)m+i+j=k_{(i+j)\mod m}m+(i+j)\mod m +km\)</span>. Como <span class="math inline">\(i+j=\lfloor \frac{i+j}m\rfloor m+ (i+j)\mod m\)</span>, se llega a <span class="math inline">\((k_1,\ldots,k_{m-1})\)</span> (<span class="math inline">\(k_0=0=w_0\)</span> no proporciona información) es una solución no negativa del sistema de desigualdades</p>
+<p><span class="math display">\[
+\left\lbrace
+\begin{array}{rll}
+x_i &amp; \geq 1, &amp; 1\leq i\leq m-1, \\
+x_i+x_j +\lfloor \frac{i+j}m\rfloor &amp; \geq x_{(i+j)\mod m}, &amp; 1\leq i\leq j\leq m-1, i+j\not=m.
+\end{array} \right.\]</span></p>
+<p>Además, si <span class="math inline">\((k_1,\ldots,k_{m-1})\in \mathbb{N}^{m-1}\)</span> es solución de este sistema de desigualdades, entonces</p>
+<p><span class="math display">\[S=\langle m,k_1m+1,k_2m+2,\ldots,k_{m-1}m+m-1\rangle\]</span></p>
+<p>es un semigrupo numérico de multiplicidad <span class="math inline">\(m\)</span> y con <span class="math inline">\(\operatorname{Ap}(S,m)=\lbrace 0,k_1m+1,k_2m+2,\ldots,k_{m-1}m+m-1\rbrace\)</span> . Sea <span class="math inline">\({\mathcal T}(m)\)</span> el conjunto de elementos de <span class="math inline">\(\mathbb{N}^{m-1}\)</span> que son solución de las desicualdades descritas arriba. Entonces <span class="math inline">\({\mathcal T}(m)\)</span> es el ideal de un monoide conmutativo finitamente generado (el semigrupo afín normal de soluciones del sistema de desigualdades homogéneo asociado). Por tanto este conjunto puede ser descrito mediante un conjunto finito de elementos de <span class="math inline">\(\mathbb{N}^{m-1}\)</span>, y es biyectivo con el conjunto de todos los semigrupos numéricos de multiplicidad <span class="math inline">\(m\)</span>. El cono descrito por ([london]) ya fue utilizado en 1987 por Kunz para hacer una clasificación de los semigrupos numéricos.</p>
+</section>
+<section id="saltos-fundamentales-una-alternativa-para-representar-un-semigrupo-numérico" class="level2">
+<h2 class="anchored" data-anchor-id="saltos-fundamentales-una-alternativa-para-representar-un-semigrupo-numérico">Saltos fundamentales, una alternativa para representar un semigrupo numérico</h2>
+<p>El número de Frobenius de <span class="math inline">\(\mathbb{N}\)</span> es <span class="math inline">\(-1\)</span>. Si <span class="math inline">\(S\)</span> es un semigrupo numérico distinto de <span class="math inline">\(\mathbb{N}\)</span>, entonces el número de Frobenius de <span class="math inline">\(S\)</span> es un entero positivo, y lo mismo ocurre con sus pseudo-números de Frobenius, y por tanto son todos ellos saltos de <span class="math inline">\(S\)</span>. Hay 1156012 semigrupos numérico con número de Frobenius 39. Esto deja claro que el número de Frobenius de un semigrupo numérico no se puede utilizar para describirlo de forma única (se puede probar que los únicos semigrupos numéricos que quedan completamente determinados por su número de Frobenius son aquellos con número de Frobenius en el conjunto <span class="math inline">\(\lbrace -1,1,2,3,4,6\rbrace\)</span> ). De entre los 1156012 semigrupos numéricos con número de Frobenius 39, hay 227 con conjunto de pseudo-números de Frobenius <span class="math inline">\(\lbrace 39\rbrace\)</span> . Por tanto, el conjunto de pseudo-números de Frobenius es una mala elección para describir semigrupos numéricos unívocamente.</p>
+<p>Claramente el conjunto de saltos de <span class="math inline">\(S\)</span> determina de forma única a <span class="math inline">\(S\)</span>. Pero precisamente lo que queremos evitar es usar todo ese conjunto, ya que en él existe normalmente mucha información redundante. Esto se debe a que si <span class="math inline">\(x | y\)</span> (<span class="math inline">\(x\)</span> divide a <span class="math inline">\(y\)</span>) e <span class="math inline">\(y\)</span> es un salto de <span class="math inline">\(S\)</span>, entonces <span class="math inline">\(x\)</span> también tiene que ser un salto de <span class="math inline">\(S\)</span>. Por tanto, de entre los saltos de <span class="math inline">\(S\)</span> sólo necesitamos aquellos que son maximales respecto de la división. Éstos son conocidos como <em>saltos fundamentales</em> de <span class="math inline">\(S\)</span>, y determinan de forma unívoca a <span class="math inline">\(S\)</span>. Se tiene así que <span class="math inline">\(x\)</span> es un salto fundamental de <span class="math inline">\(S\)</span> si y sólo si <span class="math inline">\(x\not\in S\)</span> y <span class="math inline">\(\lbrace 2x,3x\rbrace \subset S\)</span>.</p>
+<p>Sea <span class="math inline">\(X\)</span> un subconjunto no vacío de enteros positivos. Denotemos por <span class="math inline">\(\operatorname{D}(X)\)</span> el conjunto de divisores positivos de los elementos de <span class="math inline">\(X\)</span>. Si <span class="math inline">\(X\)</span> es el conjunto de saltos fundamentales de <span class="math inline">\(S\)</span>, entonces <span class="math inline">\(S=\mathbb{N}\setminus \operatorname{D}(X)\)</span>. Suponiendo que <span class="math inline">\(g\)</span> sea el número de Frobenius de <span class="math inline">\(S\)</span> (nótese que <span class="math inline">\(g=\max X\)</span>), se puede demostrar que</p>
+<p><span class="math display">\[\left\lceil \frac{g}6\right\rceil \leq  |X|\leq \left\lceil
+\frac{g}2\right\rceil.\]</span></p>
+<p>Existen enteros positivos <span class="math inline">\(g\)</span> para los que no hay semigrupos numéricos alcanzando la cota inferior, mientras que la superior siempre se alcanza con <span class="math inline">\(\lbrace 0,g+1,\to\rbrace\)</span> .</p>
+</section>
+<section id="los-sobre-semigrupos-de-un-semigrupo-numérico" class="level2">
+<h2 class="anchored" data-anchor-id="los-sobre-semigrupos-de-un-semigrupo-numérico">Los sobre-semigrupos de un semigrupo numérico</h2>
+<p>Los generadores minimales de un semigrupo numérico <span class="math inline">\(S\)</span> se pueden caracterizar como aquellos elementos <span class="math inline">\(n\in S\)</span> para los cuales el conjunto <span class="math inline">\(S\setminus\lbrace n\rbrace\)</span> es de nuevo un semigrupo numérico. Dualizando esta idea, ¿que enteros <span class="math inline">\(x\not\in S\)</span> verifican que <span class="math inline">\(S\cup\lbrace x\rbrace\)</span> sea un semigrupo numérico? Si <span class="math inline">\(S\cup\lbrace x\rbrace\)</span> es un semigrupo numérico, entonces</p>
+<ul>
+<li><p><span class="math inline">\(k x\in S\)</span> para cualquier <span class="math inline">\(k\)</span> entero mayor que uno, a saber, <span class="math inline">\(\lbrace 2x,3x\rbrace \subset S\)</span>, y</p></li>
+<li><p><span class="math inline">\(x+(S\setminus\lbrace 0\rbrace )\subseteq S\)</span>.</p></li>
+</ul>
+<p>Por tanto, el elemento <span class="math inline">\(x\)</span> tiene que ser a la vez un pseudo-número de Frobenius y un salto fundamental de <span class="math inline">\(S\)</span>. Estos saltos son conocidos como <em>saltos especiales</em> de <span class="math inline">\(S\)</span>, y son aquellos saltos fundamentales que son maximales respecto de <span class="math inline">\(\leq_S\)</span>.</p>
+<p>Usando esta idea es fácil construir de forma recursiva el conjunto de todos los semigrupos numéricos que contienen a un semigrupo numérico dado <span class="math inline">\(S\)</span>. Empezamos con el propio <span class="math inline">\(S\)</span> y calculamos sus saltos especiales. Si estos saltos son <span class="math inline">\(\lbrace g_1,\ldots, g_t\rbrace\)</span> (este conjunto es no vacío siempre que <span class="math inline">\(S\)</span> no sea todo <span class="math inline">\(\mathbb{N}\)</span>, pues en ese caso el número de Frobenius de <span class="math inline">\(S\)</span> es un salto especial). Repetimos el proceso con <span class="math inline">\(S\cup\lbrace g_1\rbrace ,\ldots,S\cup\lbrace g_t\rbrace\)</span> hasta que alcancemos <span class="math inline">\(\mathbb{N}\)</span>.</p>
+<p>Si nuestro semigrupo viene dado por sus saltos fundamentales (o simplemente los tenemos calculados) el proceso se puede acelerar teniendo en cuenta la siguiente propiedad. Si <span class="math inline">\(X\)</span> es el conjunto de saltos fundamentales de <span class="math inline">\(S\)</span> e <span class="math inline">\(Y\)</span> es el conjunto de saltos fundamentales</p>
+<p>de <span class="math inline">\(S\cup \lbrace x\rbrace\)</span> para algún <span class="math inline">\(x\in X\)</span>, entonces</p>
+<p><span class="math display">\[Y=(X\setminus\lbrace x\rbrace )\cup \left\lbrace  \frac{x}p : p \hbox{ un primo que divide a } x \hbox{
+y } \frac{x}p\not \in \operatorname{D}(X\setminus\lbrace x\rbrace )\right\rbrace .\]</span></p>
+<p>Consideremos el semigrupo <span class="math inline">\(S=\mathbb{N}\setminus\operatorname{D}(5,6)\)</span>. Tenemos que <span class="math inline">\(5\)</span> es primo y <span class="math inline">\(6=2\cdot 3\)</span>, y ambos are maximales en <span class="math inline">\(\lbrace 5,6\rbrace\)</span> respecto de <span class="math inline">\(\leq_S\)</span>. Por tanto nuestro semigrupo tiene dos “hijos”: <span class="math inline">\(\mathbb{N}\setminus\operatorname{D}(6)\)</span> (quitando el <span class="math inline">\(5\)</span>) y <span class="math inline">\(\mathbb{N}\setminus\operatorname{D}(2,3,5)\)</span> (que viene de la descomposición del <span class="math inline">\(6\)</span>).</p>
+<p>Construyamos ahora el conjunto de todos los semigrupos numéricos con número de Frobenius 8. Todos ellos contienen al semigrupo <span class="math inline">\(\lbrace 0,9,10,\to\rbrace =\mathbb{N}\setminus\operatorname{D}(5,6,7,8)\)</span>. Procedemos como en el ejemplo anterior con la salvedad de que al añadir un salto especial nunca vamos a usar el 8, preservando así el número de Frobenius. Hay exactamente 10 semigrupos numéricos con número de Frobenius 8.</p>
+</section>
+<section id="presentaciones-la-opción-generadores-relatores-para-describir-un-semigrupo-numérico" class="level2">
+<h2 class="anchored" data-anchor-id="presentaciones-la-opción-generadores-relatores-para-describir-un-semigrupo-numérico">Presentaciones, la opción generadores-relatores para describir un semigrupo numérico</h2>
+<p>Sea <span class="math inline">\(S\)</span> el semigrupo numérico generado por <span class="math inline">\(\lbrace 2,3\rbrace\)</span> . Podemos pensar en <span class="math inline">\(S\)</span> como un monoide conmutativo generado por dos elementos <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> tales que <span class="math inline">\(3x=2y\)</span>. Ésta es la idea de presentación. Démosle un carácter más formal. Supongamos que <span class="math inline">\(S\)</span> está (minimalmente) generado por <span class="math inline">\(\lbrace n_1,\ldots,n_p\rbrace\)</span> . La aplicación</p>
+<p><span class="math display">\[\varphi: \mathbb{N}^p \to S,\ \varphi(a_1,\ldots,a_p)=a_1n_1+\cdots+a_pn_p\]</span></p>
+<p>es un epimorfismo de monoides, y en consecuencia <span class="math inline">\(S\)</span> es isomorfo a <span class="math inline">\(\mathbb{N}^p/{\rm Ker (\varphi)}\)</span>, donde <span class="math inline">\({\rm Ker}(\varphi)=\lbrace  (a,b)\in \mathbb{N}^p\times \mathbb{N}^p  : \varphi(a)=\varphi(b)\rbrace\)</span> . Una <em>presentación</em> de <span class="math inline">\(S\)</span> no es más que un sistema de generadores como congruencia de <span class="math inline">\({\rm Ker}(\varphi)\)</span>.</p>
+<p>Rédei demostró que cualquier monoide finitamente generado es finitamente presentado, y por tanto, todo semigrupo numérico es finitamente presentado, en el sentido de que admite una presentación con un número finito de elementos. Es más, para semigrupos numéricos el concepto de presentación mimimal respecto de cardinalidad e inclusión coinciden (cosa que no ocurre con monoides finitamente generados en general).</p>
+<p>Rosales dio un procedimiento para calcular una presentación minimal de un semigrupo numérico a partir de su sistema minimal de generadores. Vamos a describir brevemente en qué consiste esta construcción. Supongamos, como viene siendo costumbre, que <span class="math inline">\(S\)</span> es un semigrupo numérico con sistema minimal de generadores <span class="math inline">\(\lbrace n_1,\ldots,n_p\rbrace\)</span> . Tomemos <span class="math inline">\(n\in S\)</span>. Asociado a <span class="math inline">\(n\)</span> definimos un grafo <span class="math inline">\(G_n\)</span> cuyos vértices son</p>
+<p><span class="math display">\[V_n=\lbrace  n_i  : n-n_i\in \mathbb{N}\rbrace\]</span></p>
+<p>y con lados</p>
+<p><span class="math display">\[E_n=\lbrace  n_in_j  : n-(n_i+n_j)\in \mathbb{N}\rbrace .\]</span></p>
+<p>Si <span class="math inline">\(G_n\)</span> es conexo, definimos <span class="math inline">\(\rho_n=\emptyset\)</span>. En caso contrario, supongamos que <span class="math inline">\(C_1,\ldots,C_k\)</span> son las componentes conexas de <span class="math inline">\(G_n\)</span>. Para cada <span class="math inline">\(i\in\lbrace 1,\ldots,k\rbrace\)</span> existe una factorización (expresión, más tarde volveremos a esto) de <span class="math inline">\(n\)</span> en la que sólo aparecen vértices de <span class="math inline">\(C_i\)</span>, a saber, existe <span class="math inline">\(\gamma_i\in \varphi^{-1}(n)\)</span> de forma que la coordenada <span class="math inline">\(j\)</span>-ésima de <span class="math inline">\(\gamma_i\)</span> es cero siempre que <span class="math inline">\(n_j\)</span> no sea un vértice de <span class="math inline">\(C_i\)</span>. Definimos en este caso <span class="math inline">\(\rho_n=\lbrace (\gamma_1,\gamma_2),(\gamma_1,\gamma_3),\ldots,(\gamma_1,\gamma_k)\rbrace\)</span> . Entonces <span class="math inline">\(\rho=\bigcup_{n\in S} \rho_n\)</span> es una presentación minimal de <span class="math inline">\(S\)</span> (y toda presentación minimal se puede obtener de esta forma, siempre que permitamos que <span class="math inline">\(\rho_n\)</span> conecte todas las componentes conexas de <span class="math inline">\(G_n\)</span>; en la definición que hemos dado lo hacemos en forma de estrella, con <span class="math inline">\(C_1\)</span> en el centro). Como cabía esperar, sólo hay un número finito de <span class="math inline">\(n\in S\)</span> para los que <span class="math inline">\(G_n\)</span> es no conexo. Rosales demostró en su día que si <span class="math inline">\(G_n\)</span> es no conexo, entonces <span class="math inline">\(n\)</span> es de la forma <span class="math inline">\(n=n_i+w\)</span> con <span class="math inline">\(i\in \lbrace 2,\ldots,p\rbrace\)</span> y <span class="math inline">\(0\not=w\in\operatorname{Ap}(S,n_1)\)</span> (una vez más nos topamos con los conjuntos de Apéry).</p>
+</section>
+<section id="algo-sobre-anillos-de-semigrupo" class="level2">
+<h2 class="anchored" data-anchor-id="algo-sobre-anillos-de-semigrupo">Algo sobre anillos de semigrupo</h2>
+<p>Sea <span class="math inline">\(K\)</span> un cuerpo y sea <span class="math inline">\(S\)</span> un semigrupo numérico. Escogemos <span class="math inline">\(t\)</span> como un símbolo y definimos <span class="math inline">\(K[S]=\bigoplus_{s\in S} K t^s\)</span> y <span class="math inline">\(K[\negthinspace[ S]\negthinspace]=\prod_{s\in S} K t^s\)</span>. Representamos a los elementos <span class="math inline">\(h\)</span> de <span class="math inline">\(K[\negthinspace[ S]\negthinspace]\)</span> como <span class="math inline">\(h=\sum_{s\in S} a_s t^s\)</span>, con <span class="math inline">\(a_s\in \mathbb{N}\)</span> para todo <span class="math inline">\(s\)</span>. El elemento <span class="math inline">\(h\)</span> está en <span class="math inline">\(K[S]\)</span> si <span class="math inline">\(a_s=0\)</span> para casi todos los <span class="math inline">\(s\in S\)</span> (salvo un número finito). Podemos sumar dos elementos de <span class="math inline">\(K[\negthinspace[ S]\negthinspace]\)</span> (y por tanto de <span class="math inline">\(K[S]\)</span>) simplemente sumando los coeficientes grado a grado, y se pueden multiplicar esos elementos usando la propiedad distributiva y teniendo en cuenta la regla <span class="math inline">\(t^st^{s'}=t^{s+s'}\)</span>. De esta manera, tanto <span class="math inline">\(K[\negthinspace[ S]\negthinspace]\)</span> como <span class="math inline">\(K[S]\)</span> son anillos. Es más, <span class="math inline">\(K[\negthinspace[ S]\negthinspace]\)</span> es una anillo local cuyo ideal maximal es <span class="math inline">\(m=(t^{n_1},\ldots,t^{n_p})\)</span>, con <span class="math inline">\(\lbrace n_1,\ldots,n_p\rbrace\)</span> el sistema minimal de generadores de <span class="math inline">\(S\)</span> (es por eso que a <span class="math inline">\(p\)</span> le hemos llamado antes dimensión de inmersión de <span class="math inline">\(S\)</span>). Algunas propiedades de <span class="math inline">\(K[\negthinspace[ S]\negthinspace]\)</span> y de <span class="math inline">\(K[S]\)</span> se pueden caracterizar en función de <span class="math inline">\(S\)</span>. Esta posibilidad ha sido la causante de se usen nombres para muchos parámetros del semigrupo <span class="math inline">\(S\)</span> que ya existían en teoría de anillos.</p>
+<p>La clausura entera de <span class="math inline">\(K[\negthinspace[ S]\negthinspace]\)</span> es <span class="math inline">\(K[\negthinspace[ t]\negthinspace]\)</span>, y si <span class="math inline">\(g\)</span> es el número de Frobenius de <span class="math inline">\(S\)</span>, entonces <span class="math inline">\(t^{g+1}K[\negthinspace[ t]\negthinspace]\subseteq K[\negthinspace[ S]\negthinspace]\)</span>. Es por eso que a veces al número de Frobenius más uno se le llama <em>conductor</em>.</p>
+<p>Podemos extender el morfismo <span class="math inline">\(\varphi\)</span> definido anteriormente de forma natural</p>
+<p><span class="math display">\[\psi: K[x_1,\ldots,x_p] \to K[S],\ \psi(x_i)=t^{n_i}\ (i\in\lbrace 1,\ldots,p\rbrace ).\]</span></p>
+<p>El núcleo de <span class="math inline">\(\psi\)</span> es lo que se conoce como <em>ideal de definición</em> de <span class="math inline">\(S\)</span>.</p>
+<p>Simplificando, escribimos para <span class="math inline">\(a=(a_1,\ldots,a_p)\in \mathbb{N}^p\)</span>, <span class="math inline">\(X^a=x_1^{a_1}\cdots x_p^{a_p}\)</span>.</p>
+<p>Herzog demostró que <span class="math inline">\((a,b)\in {\rm Ker}(\varphi)\)</span> si y sólo si <span class="math inline">\(X^a-X^b\in {\rm Ker}(\psi)\)</span>. Es más, si <span class="math inline">\(\rho\)</span> es una presentación minimal de <span class="math inline">\(S\)</span>, el conjunto <span class="math inline">\(\lbrace X^a-X^b : (a,b)\in\rho\rbrace\)</span> es un sistema minimal de generadores de <span class="math inline">\({\rm Ker}(\psi)\)</span>.</p>
+<p>En <span class="math inline">\(K[\negthinspace[ S]\negthinspace]\)</span> uno puede definir la aplicación <span class="math inline">\(v:K[\negthinspace[ S]\negthinspace]\to S\)</span>, <span class="math inline">\(v(\sum_{s\in S}a_st^s)\)</span> como el más pequeño elemento <span class="math inline">\(s\)</span> de <span class="math inline">\(S\)</span> tal que <span class="math inline">\(a_s\not=0\)</span>. Esto define una valuación en <span class="math inline">\(K[\negthinspace[ S]\negthinspace]\)</span>. Varios autores han explotado esta aplicación debido a sus generosas propiedades. Si <span class="math inline">\(I\)</span> es un ideal fraccionario de <span class="math inline">\(K[\negthinspace[ S]\negthinspace]\)</span>, entonces <span class="math inline">\(v(I)\)</span> es un ideal relativo de <span class="math inline">\(S\)</span>, a saber, un subconjunto de <span class="math inline">\(\mathbb{Z}\)</span> (el grupo cociente de <span class="math inline">\(S\)</span>) tal que <span class="math inline">\(I+S\subseteq I\)</span> y <span class="math inline">\(I+s\subseteq S\)</span> para algún <span class="math inline">\(s\in S\)</span>. Si <span class="math inline">\(I\)</span> y <span class="math inline">\(J\)</span> son dos ideales fraccionarios con <span class="math inline">\(J\subseteq I\)</span>, entonces la longitud de <span class="math inline">\(I/J\)</span> coincide con la cardinalidad de <span class="math inline">\(v(I)\setminus v(J)\)</span>. En particular <span class="math inline">\(I=J\)</span> si y sólo si <span class="math inline">\(v(I)=v(J)\)</span>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

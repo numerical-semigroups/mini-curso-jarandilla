@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Mini-curso semigrupos numéricos - Factorizaciones</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Mini-curso semigrupos numéricos</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./factorizaciones.html">Factorizaciones</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./elementos-notables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Elementos notables</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./grandes-familias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Grandes familias</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./factorizaciones.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Factorizaciones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bibliografia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliografia</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#factorizaciones" id="toc-factorizaciones" class="nav-link active" data-scroll-target="#factorizaciones">Factorizaciones</a></li>
+  <li><a href="#invariantes-basados-en-longitud-de-factorización" id="toc-invariantes-basados-en-longitud-de-factorización" class="nav-link" data-scroll-target="#invariantes-basados-en-longitud-de-factorización">Invariantes basados en longitud de factorización</a></li>
+  <li><a href="#invariantes-basados-en-distancia-entre-factorizaciones" id="toc-invariantes-basados-en-distancia-entre-factorizaciones" class="nav-link" data-scroll-target="#invariantes-basados-en-distancia-entre-factorizaciones">Invariantes basados en distancia entre factorizaciones</a></li>
+  <li><a href="#el-paquete-numericalsgps-para-gap" id="toc-el-paquete-numericalsgps-para-gap" class="nav-link" data-scroll-target="#el-paquete-numericalsgps-para-gap">El paquete <code>numericalsgps</code> para <code>GAP</code></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Factorizaciones</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Sea <span class="math inline">\(S=\langle 2,3\rangle\)</span>. El entero 6 está en <span class="math inline">\(S\)</span>, y <span class="math inline">\(6=2\cdot 3=3\cdot 2\)</span>. Tanto 2 como 3 son irreducibles en <span class="math inline">\(S\)</span> en el sentido de que no se pueden obtener como combinación de otros elementos de <span class="math inline">\(S\)</span>. Por tanto, 6 admite dos factorizaciones o expresiones esencialmente distintas en <span class="math inline">\(S\)</span> como combinación de irreducibles. Nótese además que 2 “divide” a 6 en <span class="math inline">\(S\)</span>, ya que <span class="math inline">\(2+4=6\)</span> y <span class="math inline">\(4\in S\)</span>. Como <span class="math inline">\(6=3+3\)</span> y <span class="math inline">\(2\)</span> no divide a <span class="math inline">\(3\)</span>, pues <span class="math inline">\(1\not\in S\)</span>, tenemos que 2 es un irreducible que no es “primo”. Lo mismo le ocurre al 3. En general, en un semigrupo numérico, sus generadores minimales son sus elementos irreducibles, y ninguno de ellos es primo. Es más en un semigrupo numérico (salvo <span class="math inline">\(\mathbb{N}\)</span>) siempre hay elementos con más de una factorización. Esto se debe a que el concepto de factorización está íntimamente ligado al de presentación, y en cuanto que tengamos relatores definiendo el semigrupo, tendremos factorizaciones distintas para un mismo elemento.</p>
+<section id="factorizaciones" class="level2">
+<h2 class="anchored" data-anchor-id="factorizaciones">Factorizaciones</h2>
+<p>Dado un semigrupo numérico <span class="math inline">\(S\)</span> generado minimalmente por <span class="math inline">\(\lbrace n_1,\ldots,n_k\rbrace\)</span> , definimos como hicimos anteriormente</p>
+<p><span class="math display">\[\varphi: \mathbb{N}^k \to S, \ \varphi(a_1,\ldots,a_k)=a_1n_1+\cdots+a_kn_k,\]</span></p>
+<p>y que usamos para hablar de presentaciones para <span class="math inline">\(S\)</span>. La gente que estudia factorizaciones le suele llamar <em>homomorfismo de factorización</em> de <span class="math inline">\(S\)</span>. Dado <span class="math inline">\(n\in S\)</span>, se define el conjunto de factorizaciones de <span class="math inline">\(n\)</span> como <span class="math inline">\(\mathsf{Z}n)=\varphi^{-1}(n)\)</span>. Así en el ejemplo anterior las factorizaciones de 6 son <span class="math inline">\(\mathsf{Z}(s)=\lbrace (3,0),(0,2)\rbrace\)</span> . Esto es, nos quedamos con los exponentes de los irreducibles que aparecen en las factorizaciones. Los conjuntos de factorizaciones de un elemento <span class="math inline">\(n\)</span> en <span class="math inline">\(S\)</span> se corresponden con las soluciones no negativas de <span class="math inline">\(n_1x_1+\cdots+n_kx_k=n\)</span>, y por tanto son siempre finitos.</p>
+</section>
+<section id="invariantes-basados-en-longitud-de-factorización" class="level2">
+<h2 class="anchored" data-anchor-id="invariantes-basados-en-longitud-de-factorización">Invariantes basados en longitud de factorización</h2>
+<p>La <em>longitud</em> de una factorización <span class="math inline">\(a=(a_1,\ldots,a_k)\)</span> de <span class="math inline">\(n\)</span> (y por tanto <span class="math inline">\(a_1n_1+\cdots+a_kn_k=n\)</span>) es <span class="math inline">\(|a|=a_1+\cdots+a_k\)</span>, esto es, el número de irreducibles que ocurren en dicha factorización. Podemos definir el <em>conjunto de longitudes de factorizaciones</em> de <span class="math inline">\(n\)</span> como <span class="math inline">\(\lbrace  l\mid \hbox{existe}\ a\in \mathsf{Z}n), |a|=l\rbrace\)</span> . Se sabe gracias a los trabajos de Gerlodinger, Halter-Koch y en general de la escuela de Graz que estos conjuntos tienen una estructura que ellos han llamado multiprogresiones casi aritméticas. Para el semigrupo <span class="math inline">\(S\)</span> se define el conjunto de longitudes como el conjunto de conjuntos de longitudes de sus elementos. Chapman y sus alumnos han probado recientemente el el conjunto de factorizaciones de <span class="math inline">\(S\)</span> no determina de forma unívoca a <span class="math inline">\(S\)</span>.</p>
+<p>Si <span class="math inline">\(\lbrace l_1 &lt; \cdots &lt; l_t\rbrace\)</span> es el conjunto de longitudes de factorizaciones de <span class="math inline">\(n\)</span> en <span class="math inline">\(S\)</span>, se define <span class="math inline">\(\Delta(n)=\lbrace l_2-l_1,l_3-l_2,\cdots,l_t-l_{t-1}\rbrace\)</span> , y <span class="math inline">\(\Delta(S)\)</span> es la unión de todos los conjuntos delta de sus elementos. Chapman y sus alumnos han calculado en varios casos este conjunto, y siguen trabajando en ello.</p>
+<p>Si todas las longitudes de un elemento dado de un monoide tienen la misma longitud, entonces se dice que el monoide tiene <em>longitud media única</em>. Claramente ningún semigrupo numérico que no sea <span class="math inline">\(\mathbb{N}\)</span> va a tener longitud media única. Basta tomar <span class="math inline">\(n_1n_k\)</span> que tiene al menos dos factorizaciones, una de longitud <span class="math inline">\(n_k\)</span> y la otra <span class="math inline">\(n_1\)</span>. Una forma de medir cuánto nos alegamos de la unicidad en las longitudes de factorizaciones es mediante la elasticidad de una factorización, concepto que fue introducido por Valenza. Se define para <span class="math inline">\(n\)</span> en <span class="math inline">\(S\)</span>, <span class="math inline">\(\operatorname{L}(n)\)</span> como el máximo (en general es el supremo, pero hemos visto que en nuestro caso el conjunto de factorizaciones es finito) de las longitudes de las factorizaciones de <span class="math inline">\(n\)</span>, y <span class="math inline">\(\operatorname{l}(n)\)</span> como el mínimo. La <em>elasticidad</em> de las factorizaciones de <span class="math inline">\(n\)</span> se define como <span class="math inline">\(\rho(n)=\frac{\operatorname{L}(n)}{\operatorname{l}(n)}\)</span>. Para el semigrupo <span class="math inline">\(S\)</span>, se define su elasticidad como <span class="math inline">\(\rho(S)=\sup_{n\in S}\rho(n)\)</span>. Se demuestra que ese supremo es un máximo y que además es un número racional, que se puede calcular a partir de los soluciones enteras no negativas irreducibles de la ecuación diofántica <span class="math inline">\(n_1x_1+\cdots+n_kx_k=n_1y_1+\cdots+n_ky_k\)</span>. En este caso <span class="math inline">\(\rho(S)=\frac{n_k}{n_1}\)</span>.</p>
+</section>
+<section id="invariantes-basados-en-distancia-entre-factorizaciones" class="level2">
+<h2 class="anchored" data-anchor-id="invariantes-basados-en-distancia-entre-factorizaciones">Invariantes basados en distancia entre factorizaciones</h2>
+<p>Dadas dos factorizaciones <span class="math inline">\(a=(a_1,\ldots,a_k)\)</span> y <span class="math inline">\(b=(b_1,\ldots,b_k)\)</span> de <span class="math inline">\(n\)</span> en el semigrupo numérico <span class="math inline">\(S=\langle n_1,\ldots,n_k\rangle\)</span>, definimos el <em>máximo común divisor</em> de ambas como <span class="math inline">\(a\wedge b=(\min\lbrace a_1,b_1\rbrace ,\ldots,\min\lbrace a_k,b_k\rbrace ).\)</span> La <em>distancia</em> entre <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> es <span class="math inline">\(\operatorname{dist}(a,b)=\max\lbrace |a-(a\wedge b)|,|b-(a\wedge b)|\rbrace\)</span> (esta función según ha demostrado Geroldinger cumple las propiedades básicas de una distancia).</p>
+<p>Si bien la distancia entre dos factorizaciones de <span class="math inline">\(n\)</span> puede ser muy grande, puede que exista una cadena de factorizaciones de <span class="math inline">\(n\)</span>, de forma que dos factorizaciones consecutivas disten relativamente poco. Decimos que una cadena <span class="math inline">\(z_1,\ldots,z_t\)</span> de factorizaciones de <span class="math inline">\(n\)</span> es una <em><span class="math inline">\(N\)</span>-cadena</em> si la distancia entre <span class="math inline">\(z_i\)</span> y <span class="math inline">\(z_{i+1}\)</span> no supera <span class="math inline">\(N\)</span> para todo <span class="math inline">\(i\)</span>. El <em>grado de catenariedad</em> de <span class="math inline">\(n\)</span> se define como el mínimo de los <span class="math inline">\(N\)</span> tales que para cualesquiera dos factorizaciones <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> de <span class="math inline">\(n\)</span> existe una <span class="math inline">\(N\)</span>-cadena <span class="math inline">\(z_1,\ldots,z_t\)</span> de forma que <span class="math inline">\(a=z_1\)</span> y <span class="math inline">\(b=z_t\)</span>. El grado de catenariedad de <span class="math inline">\(S\)</span> se define como el supremo de los grados de catenariedad de los elementos de <span class="math inline">\(S\)</span>. Se puede probar que ese supremo es de hecho un máximo, y que se alcanza en un elemento de la forma <span class="math inline">\(w+n_i\)</span> con <span class="math inline">\(w\)</span> un elemento del Apéry de la multiplicidad de <span class="math inline">\(S\)</span> en <span class="math inline">\(S\)</span>, y <span class="math inline">\(n_i\)</span> un generador minimal de <span class="math inline">\(S\)</span>. Una vez más, el conjunto de Apéry vuelve a mostrar su sorprendente utilidad.</p>
+<p>Existen otros invariantes como el grado de amansamiento, que también pueden ser calculados en función de determinados conjuntos de Apéry.</p>
+</section>
+<section id="el-paquete-numericalsgps-para-gap" class="level2">
+<h2 class="anchored" data-anchor-id="el-paquete-numericalsgps-para-gap">El paquete <a href="https://www.gap-system.org/Packages/numericalsgps.html"><code>numericalsgps</code></a> para <a href="https://www.gap-system.org"><code>GAP</code></a></h2>
+<p>Terminaremos esta sesión dando un breve paseo por el paquete <a href="https://www.gap-system.org/Packages/numericalsgps.html"><code>numericalsgps</code></a> para <a href="https://www.gap-system.org"><code>GAP</code></a>. En la página oficial del paquete aparece un detallado manual de las funciones implementadas.</p>
+<p>En <a href="https://numerical-semigroups.github.io">numerical-semigroups.github.io</a> se pueden encontrar ejemplos, cursos y tutoriales relacionados con este paquete y con los semigrupos numéricos en general.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
