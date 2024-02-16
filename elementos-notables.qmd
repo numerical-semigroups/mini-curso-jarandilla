@@ -1,165 +1,61 @@
 ---
 title: "Elementos notables"
-format: html
+format: 
+    html: default
+    pdf: default
+author: Pedro A. García Sánchez
+lang: es
+language:
+    es:
+        title-block-author-single: "Autor"
 ---
 
 
-Un *semigrupo numérico* es un conjunto de enteros cerrado para la suma,
-que contiene al cero, y cuyo complemento en $\mathbb{N}$ es finito ($\mathbb{N}$ es el
-conjunto de enteros no negativos). La condición de complemento finito es
-equivalente a imponer que el máximo común divisor de sus elementos sea
-uno. El hecho de que se emplee la palabra semigrupo para denotar estos
-conjuntos ha levantado últimamente cierta controversia, ya que estos
-conjuntos son de por sí monoides. Es por ello que algunos autores
-prefieren usar el término monoide numérico.
+Un *semigrupo numérico* es un conjunto de enteros cerrado para la suma, que contiene al cero, y cuyo complemento en $\mathbb{N}$ es finito ($\mathbb{N}$ es el conjunto de enteros no negativos). La condición de complemento finito es equivalente a imponer que el máximo común divisor de sus elementos sea uno. El hecho de que se emplee la palabra semigrupo para denotar estos conjuntos ha levantado últimamente cierta controversia, ya que estos conjuntos son de por sí monoides. Es por ello que algunos autores prefieren usar el término monoide numérico.
 
-Dado un submonoide $S$ de $\mathbb{N}$ (respecto de la suma), podemos considerar
-el conjunto $\lbrace s/d : s\in S\rbrace$ , con $d$ el máximo común divisor de los
-elementos de $S$, el cual resulta tener complemento finito en $\mathbb{N}$, y
-por tanto es un semigrupo numérico. De esta manera se tiene que
-cualquier submonoide de $\mathbb{N}$ es isomorfo a un (único) semigrupo
-numérico.
+Dado un submonoide $S$ de $\mathbb{N}$ (respecto de la suma), podemos considerar el conjunto $\lbrace s/d : s\in S\rbrace$ , con $d$ el máximo común divisor de los elementos de $S$, el cual resulta tener complemento finito en $\mathbb{N}$, y por tanto es un semigrupo numérico. De esta manera se tiene que cualquier submonoide de $\mathbb{N}$ es isomorfo a un (único) semigrupo numérico.
 
-Es probable que los semigrupos numéricos apareciesen al estudiar
-soluciones no negativas y enteras de una ecuación diofántica lineal.
-Dados enteros positivos y relativamente primos $a_1,\ldots,a_n$, el
-conjunto de elementos $b\in \mathbb{N}$ tales que $a_1 x_1+\cdots+a_n x_n=b$
-tiene al menos una solución entera no negativa es un semigrupo numérico.
-De hecho, uno de los primeros problemas relacionado con semigrupos
-numéricos fue determinar, en términos de $a_1,\ldots,a_n$, cuál es el
-mayor entero para el que no existe una solución de la anterior ecuación.
-Éste se conoce como el problema de Frobenius, y parece ser que Frobenius
-lo propuso en una de sus clases.
+Es probable que los semigrupos numéricos apareciesen al estudiar soluciones no negativas y enteras de una ecuación diofántica lineal. Dados enteros positivos y relativamente primos $a_1,\ldots,a_n$, el conjunto de elementos $b\in \mathbb{N}$ tales que $a_1 x_1+\cdots+a_n x_n=b$ tiene al menos una solución entera no negativa es un semigrupo numérico. De hecho, uno de los primeros problemas relacionado con semigrupos numéricos fue determinar, en términos de $a_1,\ldots,a_n$, cuál es el mayor entero para el que no existe una solución de la anterior ecuación. Éste se conoce como el problema de Frobenius, y parece ser que Frobenius lo propuso en una de sus clases.
 
 ## Generadores, una primera opción para representar un semigrupo
 
-El conjunto $S$ de enteros para los que existe una solución entera y no
-negativa de $a_1x_1+\cdots+ a_nx_n=b$ puede ser expresado como
-$\lbrace  a_1 x_1+\cdots+ a_n x_n  : x_1,\ldots,x_n\in \mathbb{N}\rbrace$ , o incluso
-usando una notación más abreviada como $\langle a_1,\ldots,a_n\rangle$.
-Decimos que $\lbrace a_1,\ldots,a_n\rbrace$  es un *sistema de generadores* de $S$,
-o simplemente que $\lbrace a_1,\ldots,a_n\rbrace$  genera a $S$. Si ningún
-subconjunto propio de $\lbrace a_1,\ldots,a_n\rbrace$  genera a $S$, entonces es un
-sistema *minimal* de generadores de $S$. Como $S$ cumple la propiedad
-cancelativa para la suma ($a+b=a+c$ implies $b=c$), $S$ admite un único
-sistema minimal de generadores, que es
-$(S\setminus\lbrace 0\rbrace )\setminus ((S\setminus\lbrace 0\rbrace ) + (S\setminus\lbrace 0\rbrace ))$, y
-que además es finito. La cardinalidad de este conjunto es conocida como
-la *dimensión de inmersión* de $S$ (ya comentaremos después el por qué
-de esta extraña elección para denotar esa cantidad).
+El conjunto $S$ de enteros para los que existe una solución entera y no negativa de $a_1x_1+\cdots+ a_nx_n=b$ puede ser expresado como $\lbrace  a_1 x_1+\cdots+ a_n x_n  : x_1,\ldots,x_n\in \mathbb{N}\rbrace$ , o incluso usando una notación más abreviada como $\langle a_1,\ldots,a_n\rangle$. Decimos que $\lbrace a_1,\ldots,a_n\rbrace$  es un *sistema de generadores* de $S$, o simplemente que $\lbrace a_1,\ldots,a_n\rbrace$  genera a $S$. Si ningún subconjunto propio de $\lbrace a_1,\ldots,a_n\rbrace$  genera a $S$, entonces es un sistema *minimal* de generadores de $S$. Como $S$ cumple la propiedad cancelativa para la suma ($a+b=a+c$ implies $b=c$), $S$ admite un único sistema minimal de generadores, que es $(S\setminus\lbrace 0\rbrace )\setminus ((S\setminus\lbrace 0\rbrace ) + (S\setminus\lbrace 0\rbrace ))$, y que además es finito. La cardinalidad de este conjunto es conocida como la *dimensión de inmersión* de $S$ (ya comentaremos después el por qué de esta extraña elección para denotar esa cantidad).
 
-Nótese que si $S$ está generado por $\lbrace a_1,\ldots,a_n\rbrace$ , entonces el
-máximo común divisor de $\lbrace a_1,\ldots,a_n\rbrace$  es uno (y al revés, si
-$\lbrace a_1,\ldots,a_n\rbrace$  es un conjunto de enteros con máximo común divisor
-uno, entonces el submonoide de $\mathbb{N}$ generado por $\lbrace a_1,\ldots,a_n\rbrace$  es
-un semigrupo numérico).
+Nótese que si $S$ está generado por $\lbrace a_1,\ldots,a_n\rbrace$ , entonces el máximo común divisor de $\lbrace a_1,\ldots,a_n\rbrace$  es uno (y al revés, si $\lbrace a_1,\ldots,a_n\rbrace$  es un conjunto de enteros con máximo común divisor uno, entonces el submonoide de $\mathbb{N}$ generado por $\lbrace a_1,\ldots,a_n\rbrace$  es un semigrupo numérico).
 
 ## Multiplicidad, número de Frobenius, huecos y tipo (Cohen-Macaulay)
 
-Tal y como hemos mencionado antes, se le atribuye a Frobenius el
-problema de determinar una fórmula para el entero más grande para el que
-no existe solución entera y no negativa de la ecuación
-$a_1x_1+\cdots+ a_nx_n=b$. Con nuestra notación, esto equivale a
-encontrar $\max(\mathbb{Z}\setminus S)$, con $S=\langle a_1,\ldots,a_n\rangle$
-($\mathbb{Z}$ es el conjunto de los números enteros). Es por esto que a esa
-cantidad se le conoce como el *número de Frobenius* de $S$. Si $g$ es el
-número de Frobenius de $S$, entonces $g+(\mathbb{N}\setminus \lbrace 0\rbrace )\subset S$, y
-en particular, $g+(S\setminus \lbrace 0\rbrace )\subseteq S$. Los enteros que no
-están en $S$ y verifican esta condición se denominan *pseudo-números de
-Frobenius* de $S$, y su cardinalidad es el *tipo* (Cohen-Macaulay) de
-$S$.
+Tal y como hemos mencionado antes, se le atribuye a Frobenius el problema de determinar una fórmula para el entero más grande para el que no existe solución entera y no negativa de la ecuación $a_1x_1+\cdots+ a_nx_n=b$. Con nuestra notación, esto equivale a encontrar $\max(\mathbb{Z}\setminus S)$, con $S=\langle a_1,\ldots,a_n\rangle$ ($\mathbb{Z}$ es el conjunto de los números enteros). Es por esto que a esa cantidad se le conoce como el *número de Frobenius* de $S$. Si $g$ es el número de Frobenius de $S$, entonces $g+(\mathbb{N}\setminus \lbrace 0\rbrace )\subset S$, y en particular, $g+(S\setminus \lbrace 0\rbrace )\subseteq S$. Los enteros que no están en $S$ y verifican esta condición se denominan *pseudo-números de Frobenius* de $S$, y su cardinalidad es el *tipo* (Cohen-Macaulay) de $S$.
 
-Dado un semigrupo numérico $S$, podemos definir en $\mathbb{Z}$ la siguiente
-relación de orden: $a\leq_S b$ si $b-a\in S$. El conjunto de
-pseudo-números de Frobenius coincide con el conjunto de elementos
-maximales de $\mathbb{Z}\setminus S$ respecto de este orden.
+Dado un semigrupo numérico $S$, podemos definir en $\mathbb{Z}$ la siguiente relación de orden: $a\leq_S b$ si $b-a\in S$. El conjunto de pseudo-números de Frobenius coincide con el conjunto de elementos maximales de $\mathbb{Z}\setminus S$ respecto de este orden.
 
-A los enteros positivos que no están en $S$ se les llama *saltos* (o huecos) de
-$S$, y su cardinalidad es el *género* (o grado de singularidad) de $S$.
-Si $g$ es el número de Frobenius de $S$, algunos autores usan el nombre
-*hueco* para aquellos enteros $x$ tales que $x\not \in S$ y
-$g-x\not\in S$. Todo hueco es un salto, pero puede haber saltos que no
-son huecos.
+A los enteros positivos que no están en $S$ se les llama *saltos* (o huecos) de $S$, y su cardinalidad es el *género* (o grado de singularidad) de $S$. Si $g$ es el número de Frobenius de $S$, algunos autores usan el nombre *hueco* para aquellos enteros $x$ tales que $x\not \in S$ y $g-x\not\in S$. Todo hueco es un salto, pero puede haber saltos que no son huecos.
 
-El entero positivo más pequeño que pertenece a un semigrupo numérico es
-conocido como su *multiplicidad*. La multiplicidad de semigrupo numérico
-siempre está en su sistema minimal de generadores y es además una cota
-superior para su dimensión de inmersión. Esto se debe a que dos
-generadores minimales no pueden ser congruentes módulo la multiplicidad.
+El entero positivo más pequeño que pertenece a un semigrupo numérico es conocido como su *multiplicidad*. La multiplicidad de semigrupo numérico siempre está en su sistema minimal de generadores y es además una cota superior para su dimensión de inmersión. Esto se debe a que dos generadores minimales no pueden ser congruentes módulo la multiplicidad.
 
 ## Conjuntos de Apéry, sin duda la mejor herramienta para hacer cálculos en un semigrupo numérico
 
-Hemos comentado antes que dos generadores minimales de un semigrupo
-numérico no pueden ser congruentes módulo la multiplicidad, y claramente
-lo mismo ocurre respecto de cualquier elemento no nulo del semigrupo.
-Usando esa idea, podemos considerar, para un elemento no nulo $n$ de un
-semigrupo numérico $S$, el conjunto $\lbrace w_0,\ldots,w_{n-1}\rbrace$  donde $w_i$
-es el menor elemento en $S$ congruente con $i$ módulo $n$. Se puede
-comprobar fácilmente que este conjunto es precisamente
-$\lbrace s\in S : s-n\not\in S\rbrace$ . Apéry fue el primero en explotar esta
-idea, y es por eso que este conjunto se conoce como el *conjunto de
-Apéry* de $n$ en $S$. Si $n$ es la multiplicidad de $S$, a veces a este
-conjunto se le llama una base estándar de $S$. Como este conjunto
-aparece casi por doquier en nuestro estudio de semigrupos numéricos,
-vamos a introducir una notación para referirnos a él: $\operatorname{Ap}(S,n)$.
+Hemos comentado antes que dos generadores minimales de un semigrupo numérico no pueden ser congruentes módulo la multiplicidad, y claramente lo mismo ocurre respecto de cualquier elemento no nulo del semigrupo. Usando esa idea, podemos considerar, para un elemento no nulo $n$ de un semigrupo numérico $S$, el conjunto $\lbrace w_0,\ldots,w_{n-1}\rbrace$  donde $w_i$ es el menor elemento en $S$ congruente con $i$ módulo $n$. Se puede comprobar fácilmente que este conjunto es precisamente $\lbrace s\in S : s-n\not\in S\rbrace$ . Apéry fue el primero en explotar esta idea, y es por eso que este conjunto se conoce como el *conjunto de Apéry* de $n$ en $S$. Si $n$ es la multiplicidad de $S$, a veces a este conjunto se le llama una base estándar de $S$. Como este conjunto aparece casi por doquier en nuestro estudio de semigrupos numéricos, vamos a introducir una notación para referirnos a él: $\operatorname{Ap}(S,n)$.
 
-Los conjuntos de Apéry tienen muchas y muy buenas propiedades.
-Enumeramos a continuación algunas de ellas, aunque más adelante
-aparecerán otras no menos importantes.
+Los conjuntos de Apéry tienen muchas y muy buenas propiedades. Enumeramos a continuación algunas de ellas, aunque más adelante aparecerán otras no menos importantes.
 
--   Todo entero $x$ se puede expresar de forma única como $x=k n+w$,
-    para algún $k\in \mathbb{Z}$ y $w\in \operatorname{Ap}(S,n)$. Además, $x\in S$ si y sólo
-    si $k\geq 0$.
+-   Todo entero $x$ se puede expresar de forma única como $x=k n+w$, para algún $k\in \mathbb{Z}$ y $w\in \operatorname{Ap}(S,n)$. Además, $x\in S$ si y sólo si $k\geq 0$.
 
--   Por tanto, si queremos saber si $x$ pertenece a $S$, buscamos
-    $w\in \operatorname{Ap}(S,n)$ tal que $x\equiv w \mod n$; $x\in S$ si y sólo si
-    $w\leq x$.
+-   Por tanto, si queremos saber si $x$ pertenece a $S$, buscamos $w\in \operatorname{Ap}(S,n)$ tal que $x\equiv w \mod n$; $x\in S$ si y sólo si $w\leq x$.
 
 -   El número de Frobenius de $S$ es $\max(\operatorname{Ap}(S,n))-n$.
 
--   Podemos generalizar lo anterior de la siguiente forma. Un entero $g$
-    es un pseudo-número de Frobenius de $S$ si y sólo si $g+n$ es
-    maximal en $\operatorname{Ap}(S,n)$ con respecto a $\leq_S$. Así el tipo de $S$ es
-    el cardinal del conjunto ${\rm Maximales}_{\leq_S}(\operatorname{Ap}(S,n))$.
+-   Podemos generalizar lo anterior de la siguiente forma. Un entero $g$ es un pseudo-número de Frobenius de $S$ si y sólo si $g+n$ es maximal en $\operatorname{Ap}(S,n)$ con respecto a $\leq_S$. Así el tipo de $S$ es el cardinal del conjunto $\operatorname{Maximales}_{\leq_S}(\operatorname{Ap}(S,n))$.
 
--   La fórmula de Selmer establece que el género de $S$ (número de
-    saltos) es $\frac{1}n\sum_{w\in\operatorname{Ap}(S,n)}w -\frac{n-1}2$.
+-   La fórmula de Selmer establece que el género de $S$ (número de saltos) es $\frac{1}n\sum_{w\in\operatorname{Ap}(S,n)}w -\frac{n-1}2$.
 
-Por tanto, el conocimiento del conjunto de Apéry de un semigrupo
-numérico, respecto de cualquiera de sus elementos no nulos, resuelve el
-problema de pertenencia, determina el número de Frobenius del semigrupo,
-sus pseudo-números de Frobenius, su tipo y género.
+Por tanto, el conocimiento del conjunto de Apéry de un semigrupo numérico, respecto de cualquiera de sus elementos no nulos, resuelve el problema de pertenencia, determina el número de Frobenius del semigrupo, sus pseudo-números de Frobenius, su tipo y género.
 
 ## El conjunto de semigrupos numéricos con multiplicidad fija
 
-Un conjunto $X\subseteq \mathbb{N}$ es un *sistema completo módulo* un entero
-positivo $m$ si la cardinalidad de $X$ es $m$ y para cada
-$i\in\lbrace 1,\ldots,m\rbrace$  existe $x_i\in X$ congruente con $i$ módulo $m$.
-Por definición, dado un semigrupo numérico $S$ y $m\in S\setminus\lbrace 0\rbrace$ ,
-$\operatorname{Ap}(S,m)$ es un sistema completo módulo $m$. Sin embargo, no todo
-sistema completo módulo un entero positivo $m$ es el conjunto de Apéry
-de un semigrupo numérico. Hace falta imponer algunas restricciones más.
-La primera es que $x_0=0$, y además se tiene que verificar que
-$x_i+x_j=x_{(i+j)\mod m}+k m$ para algún entero no negativo $k$ (ya que
-$x_i+x_j$ tiene que estar en el semigrupo). Obsérvese también que si $X$
-es el conjunto de Apéry de $S$ en $m$, entonces $X\cup\lbrace m\rbrace$  genera a
-$S$ y por tanto lo determina completamente (recuérdense las buenas
-propiedades de los conjuntos de Apéry). Si uno quiere usar los conjuntos
-de Apéry para describir un semigrupo numérico, la elección más económica
-es tomar el conjunto de Apéry asociado a la multiplicidad, ya que éste
-es el menor entero positivo del semigrupo.
+Un conjunto $X\subseteq \mathbb{N}$ es un *sistema completo módulo* un entero positivo $m$ si la cardinalidad de $X$ es $m$ y para cada $i\in\lbrace 1,\ldots,m\rbrace$  existe $x_i\in X$ congruente con $i$ módulo $m$. Por definición, dado un semigrupo numérico $S$ y $m\in S\setminus\lbrace 0\rbrace$ , $\operatorname{Ap}(S,m)$ es un sistema completo módulo $m$. Sin embargo, no todo sistema completo módulo un entero positivo $m$ es el conjunto de Apéry de un semigrupo numérico. Hace falta imponer algunas restricciones más. La primera es que $x_0=0$, y además se tiene que verificar que $x_i+x_j=x_{(i+j)\mod m}+k m$ para algún entero no negativo $k$ (ya que $x_i+x_j$ tiene que estar en el semigrupo). Obsérvese también que si $X$ es el conjunto de Apéry de $S$ en $m$, entonces $X\cup\lbrace m\rbrace$  genera a $S$ y por tanto lo determina completamente (recuérdense las buenas propiedades de los conjuntos de Apéry). Si uno quiere usar los conjuntos de Apéry para describir un semigrupo numérico, la elección más económica es tomar el conjunto de Apéry asociado a la multiplicidad, ya que éste es el menor entero positivo del semigrupo.
 
-Los elementos en dicho conjunto de Apéry se pueden codificar de la
-siguiente manera. Sea $S$ un semigrupo numérico y sea $m$ su
-multiplicidad. Si $\operatorname{Ap}(S,m)=\lbrace w_0=0,w_1,\ldots,w_{m-1}\rbrace$  con $w_i$
-congruente con $i$ módulo $m$, entonces $w_i= k_i m +i$ para algún
-entero no negativo $k_i$. Como $m$ es la multiplicidad y
-$m\leq w_i\in S$, si $i\not=0$, se tiene $k_i\geq 1$. La condición
-$w_i+w_j=w_{(i+j)\mod m}+km$ se puede reescribir como
-$(k_i+k_j)m+i+j=k_{(i+j)\mod m}m+(i+j)\mod m +km$. Como
-$i+j=\lfloor \frac{i+j}m\rfloor m+ (i+j)\mod m$, se llega a
-$(k_1,\ldots,k_{m-1})$ ($k_0=0=w_0$ no proporciona información) es una
-solución no negativa del sistema de desigualdades 
+Los elementos en dicho conjunto de Apéry se pueden codificar de la siguiente manera. Sea $S$ un semigrupo numérico y sea $m$ su multiplicidad. Si $\operatorname{Ap}(S,m)=\lbrace w_0=0,w_1,\ldots,w_{m-1}\rbrace$  con $w_i$ congruente con $i$ módulo $m$, entonces $w_i= k_i m +i$ para algún entero no negativo $k_i$. Como $m$ es la multiplicidad y $m\leq w_i\in S$, si $i\not=0$, se tiene $k_i\geq 1$. La condición $w_i+w_j=w_{(i+j)\mod m}+km$ se puede reescribir como $(k_i+k_j)m+i+j=k_{(i+j)\mod m}m+(i+j)\mod m +km$. Como $i+j=\lfloor \frac{i+j}m\rfloor m+ (i+j)\mod m$, se llega a $(k_1,\ldots,k_{m-1})$ ($k_0=0=w_0$ no proporciona información) es una solución no negativa del sistema de desigualdades 
 
 $$
 \left\lbrace
@@ -168,141 +64,55 @@ x_i & \geq 1, & 1\leq i\leq m-1, \\
 x_i+x_j +\lfloor \frac{i+j}m\rfloor & \geq x_{(i+j)\mod m}, & 1\leq i\leq j\leq m-1, i+j\not=m.
 \end{array} \right.$$ 
 
-Además, si $(k_1,\ldots,k_{m-1})\in \mathbb{N}^{m-1}$ es
-solución de este sistema de desigualdades, entonces
+Además, si $(k_1,\ldots,k_{m-1})\in \mathbb{N}^{m-1}$ es solución de este sistema de desigualdades, entonces
 
 $$S=\langle m,k_1m+1,k_2m+2,\ldots,k_{m-1}m+m-1\rangle$$ 
 
-es un semigrupo numérico de multiplicidad $m$ y con
-$\operatorname{Ap}(S,m)=\lbrace 0,k_1m+1,k_2m+2,\ldots,k_{m-1}m+m-1\rbrace$ . Sea
-${\mathcal T}(m)$ el conjunto de elementos de $\mathbb{N}^{m-1}$ que son
-solución de las desicualdades descritas arriba. Entonces ${\mathcal T}(m)$ es el ideal de un
-monoide conmutativo finitamente generado (el semigrupo afín normal de
-soluciones del sistema de desigualdades homogéneo asociado). Por tanto
-este conjunto puede ser descrito mediante un conjunto finito de
-elementos de $\mathbb{N}^{m-1}$, y es biyectivo con el conjunto de todos los
-semigrupos numéricos de multiplicidad $m$. El cono descrito por
-(\[london\]) ya fue utilizado en 1987 por Kunz para hacer una
-clasificación de los semigrupos numéricos.
+es un semigrupo numérico de multiplicidad $m$ y con $\operatorname{Ap}(S,m)=\lbrace 0,k_1m+1,k_2m+2,\ldots,k_{m-1}m+m-1\rbrace$ . Sea ${\mathcal T}(m)$ el conjunto de elementos de $\mathbb{N}^{m-1}$ que son solución de las desicualdades descritas arriba. Entonces ${\mathcal T}(m)$ es el ideal de un monoide conmutativo finitamente generado (el semigrupo afín normal de soluciones del sistema de desigualdades homogéneo asociado). Por tanto este conjunto puede ser descrito mediante un conjunto finito de elementos de $\mathbb{N}^{m-1}$, y es biyectivo con el conjunto de todos los semigrupos numéricos de multiplicidad $m$. El cono descrito por ([J. C. Rosales, P. A. García-Sánchez, J. I. García-García and M. B. Branco, Systems of inequalities and numerical semigroups, J. Lond. Math. Soc. 65(3) (2002), 611–623]) ya fue utilizado en 1987 por Kunz para hacer una clasificación de los semigrupos numéricos.
 
 ## Saltos fundamentales, una alternativa para representar un semigrupo numérico
 
-El número de Frobenius de $\mathbb{N}$ es $-1$. Si $S$ es un semigrupo numérico
-distinto de $\mathbb{N}$, entonces el número de Frobenius de $S$ es un entero
-positivo, y lo mismo ocurre con sus pseudo-números de Frobenius, y por
-tanto son todos ellos saltos de $S$. Hay 1156012 semigrupos numérico con
-número de Frobenius 39. Esto deja claro que el número de Frobenius de un
-semigrupo numérico no se puede utilizar para describirlo de forma única
-(se puede probar que los únicos semigrupos numéricos que quedan
-completamente determinados por su número de Frobenius son aquellos con
-número de Frobenius en el conjunto $\lbrace -1,1,2,3,4,6\rbrace$ ). De entre los
-1156012 semigrupos numéricos con número de Frobenius 39, hay 227 con
-conjunto de pseudo-números de Frobenius $\lbrace 39\rbrace$ . Por tanto, el conjunto
-de pseudo-números de Frobenius es una mala elección para describir
-semigrupos numéricos unívocamente.
+El número de Frobenius de $\mathbb{N}$ es $-1$. Si $S$ es un semigrupo numérico distinto de $\mathbb{N}$, entonces el número de Frobenius de $S$ es un entero positivo, y lo mismo ocurre con sus pseudo-números de Frobenius, y por tanto son todos ellos saltos de $S$. Hay 1156012 semigrupos numérico con número de Frobenius 39. Esto deja claro que el número de Frobenius de un semigrupo numérico no se puede utilizar para describirlo de forma única (se puede probar que los únicos semigrupos numéricos que quedan completamente determinados por su número de Frobenius son aquellos con número de Frobenius en el conjunto $\lbrace -1,1,2,3,4,6\rbrace$ ). De entre los 1156012 semigrupos numéricos con número de Frobenius 39, hay 227 con conjunto de pseudo-números de Frobenius $\lbrace 39\rbrace$ . Por tanto, el conjunto de pseudo-números de Frobenius es una mala elección para describir semigrupos numéricos unívocamente.
 
-Claramente el conjunto de saltos de $S$ determina de forma única a $S$.
-Pero precisamente lo que queremos evitar es usar todo ese conjunto, ya
-que en él existe normalmente mucha información redundante. Esto se debe
-a que si $x | y$ ($x$ divide a $y$) e $y$ es un salto de $S$, entonces
-$x$ también tiene que ser un salto de $S$. Por tanto, de entre los
-saltos de $S$ sólo necesitamos aquellos que son maximales respecto de
-la división. Éstos son conocidos como *saltos fundamentales* de $S$, y
-determinan de forma unívoca a $S$. Se tiene así que $x$ es un salto
-fundamental de $S$ si y sólo si $x\not\in S$ y $\lbrace 2x,3x\rbrace \subset S$.
+Claramente el conjunto de saltos de $S$ determina de forma única a $S$. Pero precisamente lo que queremos evitar es usar todo ese conjunto, ya que en él existe normalmente mucha información redundante. Esto se debe a que si $x \mid y$ ($x$ divide a $y$) e $y$ es un salto de $S$, entonces $x$ también tiene que ser un salto de $S$. Por tanto, de entre los saltos de $S$ sólo necesitamos aquellos que son maximales respecto de la división. Éstos son conocidos como *saltos fundamentales* de $S$, y determinan de forma unívoca a $S$. Se tiene así que $x$ es un salto fundamental de $S$ si y sólo si $x\not\in S$ y $\lbrace 2x,3x\rbrace \subset S$.
 
-Sea $X$ un subconjunto no vacío de enteros positivos. Denotemos por
-$\operatorname{D}(X)$ el conjunto de divisores positivos de los elementos de $X$. Si
-$X$ es el conjunto de saltos fundamentales de $S$, entonces
-$S=\mathbb{N}\setminus \operatorname{D}(X)$. Suponiendo que $g$ sea el número de Frobenius de
-$S$ (nótese que $g=\max X$), se puede demostrar que
+Sea $X$ un subconjunto no vacío de enteros positivos. Denotemos por $\operatorname{D}(X)$ el conjunto de divisores positivos de los elementos de $X$. Si $X$ es el conjunto de saltos fundamentales de $S$, entonces $S=\mathbb{N}\setminus \operatorname{D}(X)$. Suponiendo que $g$ sea el número de Frobenius de $S$ (nótese que $g=\max X$), se puede demostrar que
 
-$$\left\lceil \frac{g}6\right\rceil \leq  |X|\leq \left\lceil
-\frac{g}2\right\rceil.$$ 
+$$\left\lceil \frac{g}6\right\rceil \leq  |X|\leq \left\lceil \frac{g}2\right\rceil.$$ 
 
-Existen enteros positivos $g$ para los que no
-hay semigrupos numéricos alcanzando la cota inferior, mientras que la
-superior siempre se alcanza con $\lbrace 0,g+1,\to\rbrace$ .
+Existen enteros positivos $g$ para los que no hay semigrupos numéricos alcanzando la cota inferior, mientras que la superior siempre se alcanza con $\lbrace 0,g+1,\to\rbrace$.
 
 ## Los sobre-semigrupos de un semigrupo numérico
 
-Los generadores minimales de un semigrupo numérico $S$ se pueden
-caracterizar como aquellos elementos $n\in S$ para los cuales el
-conjunto $S\setminus\lbrace n\rbrace$  es de nuevo un semigrupo numérico. Dualizando
-esta idea, ¿que enteros $x\not\in S$ verifican que $S\cup\lbrace x\rbrace$  sea un
-semigrupo numérico? Si $S\cup\lbrace x\rbrace$  es un semigrupo numérico, entonces
+Los generadores minimales de un semigrupo numérico $S$ se pueden caracterizar como aquellos elementos $n\in S$ para los cuales el conjunto $S\setminus\lbrace n\rbrace$  es de nuevo un semigrupo numérico. Dualizando esta idea, ¿que enteros $x\not\in S$ verifican que $S\cup\lbrace x\rbrace$  sea un semigrupo numérico? Si $S\cup\lbrace x\rbrace$  es un semigrupo numérico, entonces
 
--   $k x\in S$ para cualquier $k$ entero mayor que uno, a saber,
-    $\lbrace 2x,3x\rbrace \subset S$, y
+-   $k x\in S$ para cualquier $k$ entero mayor que uno, a saber, $\lbrace 2x,3x\rbrace \subset S$, y
 
 -   $x+(S\setminus\lbrace 0\rbrace )\subseteq S$.
 
-Por tanto, el elemento $x$ tiene que ser a la vez un pseudo-número de
-Frobenius y un salto fundamental de $S$. Estos saltos son conocidos como
-*saltos especiales* de $S$, y son aquellos saltos fundamentales que son
-maximales respecto de $\leq_S$.
+Por tanto, el elemento $x$ tiene que ser a la vez un pseudo-número de Frobenius y un salto fundamental de $S$. Estos saltos son conocidos como *saltos especiales* de $S$, y son aquellos saltos fundamentales que son maximales respecto de $\leq_S$.
 
-Usando esta idea es fácil construir de forma recursiva el conjunto de
-todos los semigrupos numéricos que contienen a un semigrupo numérico
-dado $S$. Empezamos con el propio $S$ y calculamos sus saltos
-especiales. Si estos saltos son $\lbrace g_1,\ldots, g_t\rbrace$  (este conjunto es
-no vacío siempre que $S$ no sea todo $\mathbb{N}$, pues en ese caso el número de
-Frobenius de $S$ es un salto especial). Repetimos el proceso con
-$S\cup\lbrace g_1\rbrace ,\ldots,S\cup\lbrace g_t\rbrace$  hasta que alcancemos $\mathbb{N}$.
+Usando esta idea es fácil construir de forma recursiva el conjunto de todos los semigrupos numéricos que contienen a un semigrupo numérico dado $S$. Empezamos con el propio $S$ y calculamos sus saltos especiales. Si estos saltos son $\lbrace g_1,\ldots, g_t\rbrace$  (este conjunto es no vacío siempre que $S$ no sea todo $\mathbb{N}$, pues en ese caso el número de Frobenius de $S$ es un salto especial). Repetimos el proceso con $S\cup\lbrace g_1\rbrace ,\ldots,S\cup\lbrace g_t\rbrace$  hasta que alcancemos $\mathbb{N}$.
 
-Si nuestro semigrupo viene dado por sus saltos fundamentales (o
-simplemente los tenemos calculados) el proceso se puede acelerar
-teniendo en cuenta la siguiente propiedad. Si $X$ es el conjunto de
-saltos fundamentales de $S$ e $Y$ es el conjunto de saltos fundamentales
+Si nuestro semigrupo viene dado por sus saltos fundamentales (o simplemente los tenemos calculados) el proceso se puede acelerar teniendo en cuenta la siguiente propiedad. Si $X$ es el conjunto de saltos fundamentales de $S$ e $Y$ es el conjunto de saltos fundamentales de $S\cup \lbrace x\rbrace$  para algún $x\in X$, entonces
 
-de $S\cup \lbrace x\rbrace$  para algún $x\in X$, entonces
+$$Y=(X\setminus\lbrace x\rbrace )\cup \left\lbrace  \frac{x}p : p \hbox{ un primo que divide a } x \hbox{ y } \frac{x}p\not \in \operatorname{D}(X\setminus\lbrace x\rbrace )\right\rbrace .$$
 
-$$Y=(X\setminus\lbrace x\rbrace )\cup \left\lbrace  \frac{x}p : p \hbox{ un primo que divide a } x \hbox{
-y } \frac{x}p\not \in \operatorname{D}(X\setminus\lbrace x\rbrace )\right\rbrace .$$
+Consideremos el semigrupo $S=\mathbb{N}\setminus\operatorname{D}(5,6)$. Tenemos que $5$ es primo y $6=2\cdot 3$, y ambos are maximales en $\lbrace 5,6\rbrace$  respecto de $\leq_S$. Por tanto nuestro semigrupo tiene dos “hijos”: $\mathbb{N}\setminus\operatorname{D}(6)$ (quitando el $5$) y $\mathbb{N}\setminus\operatorname{D}(2,3,5)$ (que viene de la descomposición del $6$). 
 
-Consideremos el semigrupo $S=\mathbb{N}\setminus\operatorname{D}(5,6)$. Tenemos que $5$ es
-primo y $6=2\cdot 3$, y ambos are maximales en $\lbrace 5,6\rbrace$  respecto de
-$\leq_S$. Por tanto nuestro semigrupo tiene dos “hijos”:
-$\mathbb{N}\setminus\operatorname{D}(6)$ (quitando el $5$) y $\mathbb{N}\setminus\operatorname{D}(2,3,5)$ (que viene
-de la descomposición del $6$). 
-
-Construyamos ahora el conjunto de todos los semigrupos numéricos con
-número de Frobenius 8. Todos ellos contienen al semigrupo
-$\lbrace 0,9,10,\to\rbrace =\mathbb{N}\setminus\operatorname{D}(5,6,7,8)$. Procedemos como en el ejemplo
-anterior con la salvedad de que al añadir un salto especial nunca vamos
-a usar el 8, preservando así el número de Frobenius. Hay exactamente 10 semigrupos numéricos con número de
-Frobenius 8.
+Construyamos ahora el conjunto de todos los semigrupos numéricos con número de Frobenius 8. Todos ellos contienen al semigrupo $\lbrace 0,9,10,\to\rbrace =\mathbb{N}\setminus\operatorname{D}(5,6,7,8)$. Procedemos como en el ejemplo anterior con la salvedad de que al añadir un salto especial nunca vamos a usar el 8, preservando así el número de Frobenius. Hay exactamente 10 semigrupos numéricos con número de Frobenius 8.
 
 ## Presentaciones, la opción generadores-relatores para describir un semigrupo numérico
 
-Sea $S$ el semigrupo numérico generado por $\lbrace 2,3\rbrace$ . Podemos pensar en
-$S$ como un monoide conmutativo generado por dos elementos $x$ e $y$
-tales que $3x=2y$. Ésta es la idea de presentación. Démosle un carácter
-más formal. Supongamos que $S$ está (minimalmente) generado por
-$\lbrace n_1,\ldots,n_p\rbrace$ . La aplicación
+Sea $S$ el semigrupo numérico generado por $\lbrace 2,3\rbrace$ . Podemos pensar en $S$ como un monoide conmutativo generado por dos elementos $x$ e $y$ tales que $3x=2y$. Ésta es la idea de presentación. Démosle un carácter más formal. Supongamos que $S$ está (minimalmente) generado por $\lbrace n_1,\ldots,n_p\rbrace$ . La aplicación
 
 $$\varphi: \mathbb{N}^p \to S,\ \varphi(a_1,\ldots,a_p)=a_1n_1+\cdots+a_pn_p$$
 
-es un epimorfismo de monoides, y en consecuencia $S$ es isomorfo a
-$\mathbb{N}^p/{\rm Ker (\varphi)}$, donde
-${\rm Ker}(\varphi)=\lbrace  (a,b)\in \mathbb{N}^p\times \mathbb{N}^p  : \varphi(a)=\varphi(b)\rbrace$ .
-Una *presentación* de $S$ no es más que un sistema de generadores como
-congruencia de ${\rm Ker}(\varphi)$.
+es un epimorfismo de monoides, y en consecuencia $S$ es isomorfo a $\mathbb{N}^p/\ker(\varphi)$, donde $\ker(\varphi)=\lbrace  (a,b)\in \mathbb{N}^p\times \mathbb{N}^p  : \varphi(a)=\varphi(b)\rbrace$ . Una *presentación* de $S$ no es más que un sistema de generadores como congruencia de $\ker(\varphi)$.
 
-Rédei demostró que cualquier monoide finitamente generado es finitamente
-presentado, y por tanto, todo semigrupo numérico es finitamente
-presentado, en el sentido de que admite una presentación con un número
-finito de elementos. Es más, para semigrupos numéricos el concepto de
-presentación mimimal respecto de cardinalidad e inclusión coinciden
-(cosa que no ocurre con monoides finitamente generados en general).
+Rédei demostró que cualquier monoide finitamente generado es finitamente presentado, y por tanto, todo semigrupo numérico es finitamente presentado, en el sentido de que admite una presentación con un número finito de elementos. Es más, para semigrupos numéricos el concepto de presentación mimimal respecto de cardinalidad e inclusión coinciden (cosa que no ocurre con monoides finitamente generados en general).
 
-Rosales dio un procedimiento para calcular una presentación minimal de
-un semigrupo numérico a partir de su sistema minimal de generadores.
-Vamos a describir brevemente en qué consiste esta construcción.
-Supongamos, como viene siendo costumbre, que $S$ es un semigrupo
-numérico con sistema minimal de generadores $\lbrace n_1,\ldots,n_p\rbrace$ .
-Tomemos $n\in S$. Asociado a $n$ definimos un grafo $G_n$ cuyos vértices
-son 
+Rosales dio un procedimiento para calcular una presentación minimal de un semigrupo numérico a partir de su sistema minimal de generadores. Vamos a describir brevemente en qué consiste esta construcción. Supongamos, como viene siendo costumbre, que $S$ es un semigrupo numérico con sistema minimal de generadores $\lbrace n_1,\ldots,n_p\rbrace$ . Tomemos $n\in S$. Asociado a $n$ definimos un grafo $G_n$ cuyos vértices son 
 
 $$V_n=\lbrace  n_i  : n-n_i\in \mathbb{N}\rbrace$$ 
 
@@ -310,72 +120,22 @@ y con lados
 
 $$E_n=\lbrace  n_in_j  : n-(n_i+n_j)\in \mathbb{N}\rbrace .$$ 
 
-Si $G_n$ es conexo, definimos
-$\rho_n=\emptyset$. En caso contrario, supongamos que $C_1,\ldots,C_k$
-son las componentes conexas de $G_n$. Para cada $i\in\lbrace 1,\ldots,k\rbrace$ 
-existe una factorización (expresión, más tarde volveremos a esto) de $n$
-en la que sólo aparecen vértices de $C_i$, a saber, existe
-$\gamma_i\in \varphi^{-1}(n)$ de forma que la coordenada $j$-ésima de
-$\gamma_i$ es cero siempre que $n_j$ no sea un vértice de $C_i$.
-Definimos en este caso
-$\rho_n=\lbrace (\gamma_1,\gamma_2),(\gamma_1,\gamma_3),\ldots,(\gamma_1,\gamma_k)\rbrace$ .
-Entonces $\rho=\bigcup_{n\in S} \rho_n$ es una presentación minimal de
-$S$ (y toda presentación minimal se puede obtener de esta forma, siempre
-que permitamos que $\rho_n$ conecte todas las componentes conexas de
-$G_n$; en la definición que hemos dado lo hacemos en forma de estrella,
-con $C_1$ en el centro). Como cabía esperar, sólo hay un número finito
-de $n\in S$ para los que $G_n$ es no conexo. Rosales demostró en su día
-que si $G_n$ es no conexo, entonces $n$ es de la forma $n=n_i+w$ con
-$i\in \lbrace 2,\ldots,p\rbrace$  y $0\not=w\in\operatorname{Ap}(S,n_1)$ (una vez más nos topamos
-con los conjuntos de Apéry).
+Si $G_n$ es conexo, definimos $\rho_n=\emptyset$. En caso contrario, supongamos que $C_1,\ldots,C_k$ son las componentes conexas de $G_n$. Para cada $i\in\lbrace 1,\ldots,k\rbrace$ existe una factorización (expresión, más tarde volveremos a esto) de $n$ en la que sólo aparecen vértices de $C_i$, a saber, existe $\gamma_i\in \varphi^{-1}(n)$ de forma que la coordenada $j$-ésima de $\gamma_i$ es cero siempre que $n_j$ no sea un vértice de $C_i$. Definimos en este caso $\rho_n=\lbrace (\gamma_1,\gamma_2),(\gamma_1,\gamma_3),\ldots,(\gamma_1,\gamma_k)\rbrace$ . Entonces $\rho=\bigcup_{n\in S} \rho_n$ es una presentación minimal de $S$ (y toda presentación minimal se puede obtener de esta forma, siempre que permitamos que $\rho_n$ conecte todas las componentes conexas de $G_n$; en la definición que hemos dado lo hacemos en forma de estrella, con $C_1$ en el centro). Como cabía esperar, sólo hay un número finito de $n\in S$ para los que $G_n$ es no conexo. Rosales demostró en su día que si $G_n$ es no conexo, entonces $n$ es de la forma $n=n_i+w$ con $i\in \lbrace 2,\ldots,p\rbrace$  y $0\not=w\in\operatorname{Ap}(S,n_1)$ (una vez más nos topamos con los conjuntos de Apéry).
 
 ## Algo sobre anillos de semigrupo
 
-Sea $K$ un cuerpo y sea $S$ un semigrupo numérico. Escogemos $t$ como un
-símbolo y definimos $K[S]=\bigoplus_{s\in S} K t^s$ y
-$K[\negthinspace[ S]\negthinspace]=\prod_{s\in S} K t^s$. Representamos a los elementos $h$ de
-$K[\negthinspace[ S]\negthinspace]$ como $h=\sum_{s\in S} a_s t^s$, con $a_s\in \mathbb{N}$ para todo $s$.
-El elemento $h$ está en $K[S]$ si $a_s=0$ para casi todos los $s\in S$
-(salvo un número finito). Podemos sumar dos elementos de $K[\negthinspace[ S]\negthinspace]$ (y por
-tanto de $K[S]$) simplemente sumando los coeficientes grado a grado, y
-se pueden multiplicar esos elementos usando la propiedad distributiva y
-teniendo en cuenta la regla $t^st^{s'}=t^{s+s'}$. De esta manera, tanto
-$K[\negthinspace[ S]\negthinspace]$ como $K[S]$ son anillos. Es más, $K[\negthinspace[ S]\negthinspace]$ es una anillo local
-cuyo ideal maximal es $m=(t^{n_1},\ldots,t^{n_p})$, con
-$\lbrace n_1,\ldots,n_p\rbrace$  el sistema minimal de generadores de $S$ (es por
-eso que a $p$ le hemos llamado antes dimensión de inmersión de $S$).
-Algunas propiedades de $K[\negthinspace[ S]\negthinspace]$ y de $K[S]$ se pueden caracterizar en
-función de $S$. Esta posibilidad ha sido la causante de se usen nombres
-para muchos parámetros del semigrupo $S$ que ya existían en teoría de
-anillos.
+Sea $K$ un cuerpo y sea $S$ un semigrupo numérico. Escogemos $t$ como un símbolo y definimos $K[S]=\bigoplus_{s\in S} K t^s$ y $K[\negthinspace[ S]\negthinspace]=\prod_{s\in S} K t^s$. Representamos a los elementos $h$ de $K[\negthinspace[ S]\negthinspace]$ como $h=\sum_{s\in S} a_s t^s$, con $a_s\in \mathbb{N}$ para todo $s$. El elemento $h$ está en $K[S]$ si $a_s=0$ para casi todos los $s\in S$ (salvo un número finito). Podemos sumar dos elementos de $K[\negthinspace[ S]\negthinspace]$ (y por tanto de $K[S]$) simplemente sumando los coeficientes grado a grado, y se pueden multiplicar esos elementos usando la propiedad distributiva y teniendo en cuenta la regla $t^st^{s'}=t^{s+s'}$. De esta manera, tanto $K[\negthinspace[ S]\negthinspace]$ como $K[S]$ son anillos. Es más, $K[\negthinspace[ S]\negthinspace]$ es una anillo local cuyo ideal maximal es $m=(t^{n_1},\ldots,t^{n_p})$, con $\lbrace n_1,\ldots,n_p\rbrace$  el sistema minimal de generadores de $S$ (es por eso que a $p$ le hemos llamado antes dimensión de inmersión de $S$). Algunas propiedades de $K[\negthinspace[ S]\negthinspace]$ y de $K[S]$ se pueden caracterizar en función de $S$. Esta posibilidad ha sido la causante de se usen nombres para muchos parámetros del semigrupo $S$ que ya existían en teoría de anillos.
 
-La clausura entera de $K[\negthinspace[ S]\negthinspace]$ es $K[\negthinspace[ t]\negthinspace]$, y si $g$ es el número de
-Frobenius de $S$, entonces $t^{g+1}K[\negthinspace[ t]\negthinspace]\subseteq K[\negthinspace[ S]\negthinspace]$. Es por eso
-que a veces al número de Frobenius más uno se le llama *conductor*.
+La clausura entera de $K[\negthinspace[ S]\negthinspace]$ es $K[\negthinspace[ t]\negthinspace]$, y si $g$ es el número de Frobenius de $S$, entonces $t^{g+1}K[\negthinspace[ t]\negthinspace]\subseteq K[\negthinspace[ S]\negthinspace]$. Es por eso que a veces al número de Frobenius más uno se le llama *conductor*.
 
-Podemos extender el morfismo $\varphi$ definido anteriormente de forma
-natural
+Podemos extender el morfismo $\varphi$ definido anteriormente de forma natural
 
 $$\psi: K[x_1,\ldots,x_p] \to K[S],\ \psi(x_i)=t^{n_i}\ (i\in\lbrace 1,\ldots,p\rbrace ).$$
 
-El núcleo de $\psi$ es lo que se conoce como *ideal de definición* de
-$S$.
+El núcleo de $\psi$ es lo que se conoce como *ideal de definición* de $S$.
 
-Simplificando, escribimos para $a=(a_1,\ldots,a_p)\in \mathbb{N}^p$,
-$X^a=x_1^{a_1}\cdots x_p^{a_p}$.
+Simplificando, escribimos para $a=(a_1,\ldots,a_p)\in \mathbb{N}^p$, $X^a=x_1^{a_1}\cdots x_p^{a_p}$.
 
-Herzog demostró que $(a,b)\in {\rm Ker}(\varphi)$ si y sólo si
-$X^a-X^b\in {\rm Ker}(\psi)$. Es más, si $\rho$ es una presentación
-minimal de $S$, el conjunto $\lbrace X^a-X^b : (a,b)\in\rho\rbrace$  es un sistema
-minimal de generadores de ${\rm Ker}(\psi)$.
+Herzog demostró que $(a,b)\in \ker(\varphi)$ si y sólo si $X^a-X^b\in \ker(\psi)$. Es más, si $\rho$ es una presentación minimal de $S$, el conjunto $\lbrace X^a-X^b : (a,b)\in\rho\rbrace$  es un sistema minimal de generadores de $\ker(\psi)$.
 
-En $K[\negthinspace[ S]\negthinspace]$ uno puede definir la aplicación $v:K[\negthinspace[ S]\negthinspace]\to S$,
-$v(\sum_{s\in S}a_st^s)$ como el más pequeño elemento $s$ de $S$ tal que
-$a_s\not=0$. Esto define una valuación en $K[\negthinspace[ S]\negthinspace]$. Varios autores han
-explotado esta aplicación debido a sus generosas propiedades. Si $I$ es
-un ideal fraccionario de $K[\negthinspace[ S]\negthinspace]$, entonces $v(I)$ es un ideal relativo
-de $S$, a saber, un subconjunto de $\mathbb{Z}$ (el grupo cociente de $S$) tal
-que $I+S\subseteq I$ y $I+s\subseteq S$ para algún $s\in S$. Si $I$ y
-$J$ son dos ideales fraccionarios con $J\subseteq I$, entonces la
-longitud de $I/J$ coincide con la cardinalidad de $v(I)\setminus v(J)$.
-En particular $I=J$ si y sólo si $v(I)=v(J)$.
+En $K[\negthinspace[ S]\negthinspace]$ uno puede definir la aplicación $v:K[\negthinspace[ S]\negthinspace]\to S$, $v(\sum_{s\in S}a_st^s)$ como el más pequeño elemento $s$ de $S$ tal que $a_s\not=0$. Esto define una valuación en $K[\negthinspace[ S]\negthinspace]$. Varios autores han explotado esta aplicación debido a sus generosas propiedades. Si $I$ es un ideal fraccionario de $K[\negthinspace[ S]\negthinspace]$, entonces $v(I)$ es un ideal relativo de $S$, a saber, un subconjunto de $\mathbb{Z}$ (el grupo cociente de $S$) tal que $I+S\subseteq I$ y $I+s\subseteq S$ para algún $s\in S$. Si $I$ y $J$ son dos ideales fraccionarios con $J\subseteq I$, entonces la longitud de $I/J$ coincide con la cardinalidad de $v(I)\setminus v(J)$. En particular $I=J$ si y sólo si $v(I)=v(J)$.

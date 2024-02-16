@@ -1,225 +1,72 @@
 ---
 title: "Grandes familias"
-format: html
+format: 
+    html: default
+    pdf: default
+author: Pedro A. García Sánchez
+lang: es
+language:
+    es:
+        title-block-author-single: "Autor"
 ---
 
 
-Hay algunas familias que han sido estudiadas debido a sus propiedades
-extremas, o bien por sus aplicaciones a la teoría de anillos. Hablaremos
-brevemente de ellas, así como de otras que recientemente han adquirido
-cierta transcendencia.
+Hay algunas familias que han sido estudiadas debido a sus propiedades extremas, o bien por sus aplicaciones a la teoría de anillos. Hablaremos brevemente de ellas, así como de otras que recientemente han adquirido cierta transcendencia.
 
 ## Semigrupos numéricos simétricos y pseudo-simétricos
 
-Un semigrupo numérico es *simétrico* si no tiene huecos. Esto es, si $S$
-es nuestro semigrupo numérico y tiene número de Frobenius $g$, entonces
-para cada entero $x$, el hecho de que $x\not \in S$, lleva a $g-x\in S$.
-Fröberg, Gottlieb y Häggkvist probaron que los semigrupos numéricos
-simétricos son aquellos que tienen un número de Frobenius impar y con el
-menor número posible de saltos, lo que equivale a decir que son
-maximales (respecto de la inclusión) en el conjunto de semigrupos
-numéricos con un número de Frobenius dado. De esta manera se ve que en
-efecto estos semigrupos verifican propiedades extremas, pero aquí no
-acaban esas propiedades. Estos semigrupos se pueden caracterizar como
-aquellos cuyo tipo es uno, y por tanto son los que menor tipo tienen de
-entre todos los semigrupos numéricos. Kunz probó que $K[\negthinspace[ S]\negthinspace]$ es
-Gorenstein si y sólo si $S$ es simétrico. Por tanto, si uno busca
-ejemplos de anillos Gorenstein, uno puede echar mano de esta bolsa de
-ejemplos. De hecho, tal y como Rosales demostró no hace mucho, uno puede
-escoger ejemplos con una dimensión de inmersión y multiplicidad
-preestablecidas.
+Un semigrupo numérico es *simétrico* si no tiene huecos. Esto es, si $S$ es nuestro semigrupo numérico y tiene número de Frobenius $g$, entonces para cada entero $x$, el hecho de que $x\not \in S$, lleva a $g-x\in S$. Fröberg, Gottlieb y Häggkvist probaron que los semigrupos numéricos simétricos son aquellos que tienen un número de Frobenius impar y con el menor número posible de saltos, lo que equivale a decir que son maximales (respecto de la inclusión) en el conjunto de semigrupos numéricos con un número de Frobenius dado. De esta manera se ve que en efecto estos semigrupos verifican propiedades extremas, pero aquí no acaban esas propiedades. Estos semigrupos se pueden caracterizar como aquellos cuyo tipo es uno, y por tanto son los que menor tipo tienen de entre todos los semigrupos numéricos. Kunz probó que $K[\negthinspace[ S]\negthinspace]$ es Gorenstein si y sólo si $S$ es simétrico. Por tanto, si uno busca ejemplos de anillos Gorenstein, uno puede echar mano de esta bolsa de ejemplos. De hecho, tal y como Rosales demostró no hace mucho, uno puede escoger ejemplos con una dimensión de inmersión y multiplicidad preestablecidas.
 
-La pregunta natural que surge en este momento es qué pasa si el número
-de Frobenius es par. ¿Se pueden imponer condiciones parecidas a las del
-párrafo anterior en este caso? La respuesta es afirmativa y la dan lo
-que se conoce como semigrupos numéricos pseudo-simétricos. Hay que tener
-en cuenta el siguiente detalle: si $g$ es el número de Frobenius de $S$
-y $g$ es par, entonces $\frac{g}2$ es un salto de $S$, y claramente
-$g-\frac{g}2$ da $\frac{g}2$. Por tanto la condición pasa a ser la
-siguiente: si $x$ es un entero que no está en $S$ distinto de
-$\frac{g}2$, entonces $g-x\in S$. Un semigrupo numérico verificando esa
-condición se dice *pseudo-simétrico*. El tipo de estos semigrupos es
-siempre dos, siendo sus pseudo-números de Frobenius $g$ y $\frac{g}2$,
-aunque no todo semigrupo numérico de tipo dos es pseudo-simétrico. Se
-verifica además que estos semigrupos son los maximales de entre los
-semigrupos numéricos con su mismo número de Frobenius, y son aquellos
-también que tienen el menor número de saltos posible.
+La pregunta natural que surge en este momento es qué pasa si el número de Frobenius es par. ¿Se pueden imponer condiciones parecidas a las del párrafo anterior en este caso? La respuesta es afirmativa y la dan lo que se conoce como semigrupos numéricos pseudo-simétricos. Hay que tener en cuenta el siguiente detalle: si $g$ es el número de Frobenius de $S$ y $g$ es par, entonces $\frac{g}2$ es un salto de $S$, y claramente $g-\frac{g}2$ da $\frac{g}2$. Por tanto la condición pasa a ser la siguiente: si $x$ es un entero que no está en $S$ distinto de $\frac{g}2$, entonces $g-x\in S$. Un semigrupo numérico verificando esa condición se dice *pseudo-simétrico*. El tipo de estos semigrupos es siempre dos, siendo sus pseudo-números de Frobenius $g$ y $\frac{g}2$, aunque no todo semigrupo numérico de tipo dos es pseudo-simétrico. Se verifica además que estos semigrupos son los maximales de entre los semigrupos numéricos con su mismo número de Frobenius, y son aquellos también que tienen el menor número de saltos posible.
 
-Desde el punto de vista de los saltos especial ambos conceptos se pueden
-unificar diciendo que un semigrupo numérico es simétrico o
-pseudo-simétrico si y sólo si tiene a lo sumo un salto especial (nótese
-que $\frac{g}2$ no puede ser nunca un salto fundamental de $S$, si $g$
-es el número de Frobenius de $S$). Este hecho tiene que ver con el
-proceso que describimos en la sesión anterior para determinar los
-sobre-semigrupos de un semigrupo numérico dado, ya que estos semigrupos
-son maximales en el conjunto de todos los semigrupos numéricos con un
-número de Frobenius dado.
+Desde el punto de vista de los saltos especial ambos conceptos se pueden unificar diciendo que un semigrupo numérico es simétrico o pseudo-simétrico si y sólo si tiene a lo sumo un salto especial (nótese que $\frac{g}2$ no puede ser nunca un salto fundamental de $S$, si $g$ es el número de Frobenius de $S$). Este hecho tiene que ver con el proceso que describimos en la sesión anterior para determinar los sobre-semigrupos de un semigrupo numérico dado, ya que estos semigrupos son maximales en el conjunto de todos los semigrupos numéricos con un número de Frobenius dado.
 
 ## Descomposición en semigrupos irreducibles
 
-Podemos unificar ambos conceptos de una forma alternativa. Un semigrupo
-numérico es *irreducible* si no se puede expresar como intersección de
-dos semigrupos numéricos que lo contengan propiamente. Resulta que
-irreducibilidad y maximalidad en el conjunto de semigrupos con número de
-Frobenius fijo coinciden. De esta forma un semigrupo numérico es
-irreducible si y sólo si es o bien simétrico (y por tanto tiene un
-número de Frobenius impar) o pseudo-simétrico (y con número de Frobenius
-par).
+Podemos unificar ambos conceptos de una forma alternativa. Un semigrupo numérico es *irreducible* si no se puede expresar como intersección de dos semigrupos numéricos que lo contengan propiamente. Resulta que irreducibilidad y maximalidad en el conjunto de semigrupos con número de Frobenius fijo coinciden. De esta forma un semigrupo numérico es irreducible si y sólo si es o bien simétrico (y por tanto tiene un número de Frobenius impar) o pseudo-simétrico (y con número de Frobenius par).
 
-Cualquier semigrupo numérico se puede expresar como intersección de un
-número finito de semigrupos numéricos irreducibles. Branco y Rosales han
-caracterizado estas descomposiciones, y han estudiado aquellos
-semigrupos que se factorizan como intersección de sólo simétricos o sólo
-pseudo-simétricos. Hoy en día sabemos cómo calcular descomposiciones en
-irreducibles minimales, pero no sabemos a priori el número de semigrupos
-que intervienen en dichas descomposiciones. Es más el concepto de
-descomposición minimal respecto de redundancia y de número de factores,
-no tiene por qué coincidir en general.
+Cualquier semigrupo numérico se puede expresar como intersección de un número finito de semigrupos numéricos irreducibles. Branco y Rosales han caracterizado estas descomposiciones, y han estudiado aquellos semigrupos que se factorizan como intersección de sólo simétricos o sólo pseudo-simétricos. Hoy en día sabemos cómo calcular descomposiciones en irreducibles minimales, pero no sabemos a priori el número de semigrupos que intervienen en dichas descomposiciones. Es más el concepto de descomposición minimal respecto de redundancia y de número de factores, no tiene por qué coincidir en general.
 
 ## Intersecciones completa y telescópicos
 
-Un semigrupo numérico es una *intersección completa* si la cardinalidad
-de una de sus presentaciones minimales (y por tanto de todas) es igual a
-su dimensión de inmersión menos uno. Esto viene a decir que es un
-semigrupo numérico que puede ser descrito con el menor posible número de
-relatores. Así una vez más nos encontramos ante un caso extremo. Resulta
-que todo semigrupo numérico intersección completa es simétrico. Delorme
-probó que un semigrupo numérico es intersección completa si y sólo si es
-la pegada de dos semigrupos numéricos que son intersección completa,
-donde pegada viene a decir a grandes rasgos que la presentación del
-semigrupo resultante se obtiene uniendo las presentaciones de los
-semigrupos pegados más un relator que relaciona los generadores de ambos
-semigrupos. Los semigrupos numéricos generados por dos elementos son el
-ejemplo más sencillo de intersecciones completas. Si somos capaces de
-pegar un semigrupo numérico generado por dos elementos con un submonoide
-de $\mathbb{N}$ generado por un elemento (y por tanto isomorfo a $\mathbb{N}$), lo que
-obtenemos es intersección completa con tres generadores. Podemos repetir
-este proceso y obtenemos de esta forma semigrupos numéricos con más de
-tres generadores que son también intersecciones completas. Los
-semigrupos que se obtienen de esta manera se llaman *telescópicos*, y
-sus presentaciones tienen, por la forma de construirlos, una apariencia
-escalonada. El hecho de que sean relativamente fáciles de construir ha
-hecho que hayan sido utilizados bastante en la literatura.
+Un semigrupo numérico es una *intersección completa* si la cardinalidad de una de sus presentaciones minimales (y por tanto de todas) es igual a su dimensión de inmersión menos uno. Esto viene a decir que es un semigrupo numérico que puede ser descrito con el menor posible número de relatores. Así una vez más nos encontramos ante un caso extremo. Resulta que todo semigrupo numérico intersección completa es simétrico. Delorme probó que un semigrupo numérico es intersección completa si y sólo si es la pegada de dos semigrupos numéricos que son intersección completa, donde pegada viene a decir a grandes rasgos que la presentación del semigrupo resultante se obtiene uniendo las presentaciones de los semigrupos pegados más un relator que relaciona los generadores de ambos semigrupos. Los semigrupos numéricos generados por dos elementos son el ejemplo más sencillo de intersecciones completas. Si somos capaces de pegar un semigrupo numérico generado por dos elementos con un submonoide de $\mathbb{N}$ generado por un elemento (y por tanto isomorfo a $\mathbb{N}$), lo que obtenemos es intersección completa con tres generadores. Podemos repetir este proceso y obtenemos de esta forma semigrupos numéricos con más de tres generadores que son también intersecciones completas. Los semigrupos que se obtienen de esta manera se llaman *telescópicos*, y sus presentaciones tienen, por la forma de construirlos, una apariencia escalonada. El hecho de que sean relativamente fáciles de construir ha hecho que hayan sido utilizados bastante en la literatura.
 
 ## Semigrupos numéricos con máxima dimensión de inmersión
 
-Como ya comentamos en la sesión anterior, la multiplicidad (el menor
-entero positivo) de un semigrupo numérico es una cota superior para su
-dimensión de inmersión (cardinalidad de su sistema minimal de
-generadores). Cuando esta cota se alcanza decimos que el semigrupo es de
-*máxima dimensión de inmersión*, y por tanto estamos ante otra situación
-extrema. Pero ésta no es la única caracterización extrema de este tipo
-de semigrupos. Se puede probar que estos semigrupos numéricos alcanzan
-el máximo número posible de relatores. Esto fue probado por Sally, y más
-tarde Rosales demostró que esa propiedad los caracteriza. Para estos
-semigrupos se da además que cualquier elemento del conjunto de Apéry de
-la multiplicidad no nulo es un generador minimal (claramente, todo
-generador minimal distinto de la multiplicidad está siempre en cualquier
-conjunto de Apéry).
+Como ya comentamos en la sesión anterior, la multiplicidad (el menor entero positivo) de un semigrupo numérico es una cota superior para su dimensión de inmersión (cardinalidad de su sistema minimal de generadores). Cuando esta cota se alcanza decimos que el semigrupo es de *máxima dimensión de inmersión*, y por tanto estamos ante otra situación extrema. Pero ésta no es la única caracterización extrema de este tipo de semigrupos. Se puede probar que estos semigrupos numéricos alcanzan el máximo número posible de relatores. Esto fue probado por Sally, y más tarde Rosales demostró que esa propiedad los caracteriza. Para estos semigrupos se da además que cualquier elemento del conjunto de Apéry de la multiplicidad no nulo es un generador minimal (claramente, todo generador minimal distinto de la multiplicidad está siempre en cualquier conjunto de Apéry).
 
-Sea $S$ un semigrupo numérico de multiplicidad $m$. Si expresamos lo
-elemento del conjunto de Apéry de $m$ en $S$ como
-$\operatorname{Ap}(S,m)=\lbrace 0,w_1,\ldots,w_{m-1}\rbrace$ , entonces
-$\langle m,m+w_1,\ldots,m+w_{m-1}\rangle$ es un semigrupo numérico de
-máxima dimensión de inmersión. Esto deja patente la cantidad de
-semigrupos numéricos con máxima dimensión de inmersión. Nótese que
-$m+w_i>2m$ para todo $i$. Si escogemos un semigrupo numérico de máxima
-dimensión de inmersión, $\langle m,x_1,\ldots,x_{m-1}\rangle$ de forma
-que $x_i>2m$ para todo $i$, entonces
-$S=\langle m,x_1-m,\ldots,x_{m-1}-m\rangle$ es un semigrupo numérico con
-multiplicidad $m$ y $\operatorname{Ap}(S,m)=\lbrace 0,x_1-m,\ldots,x_{m-1}-m\rbrace$ . Por tanto,
-hay una correspondencia biunívoca entre los semigrupos numéricos de
-multiplicidad $m$ y los semigrupos numéricos de máxima dimensión de
-inmersión $m$ y con el resto de generadores mayores que el doble de $m$.
+Sea $S$ un semigrupo numérico de multiplicidad $m$. Si expresamos lo elemento del conjunto de Apéry de $m$ en $S$ como $\operatorname{Ap}(S,m)=\lbrace 0,w_1,\ldots,w_{m-1}\rbrace$ , entonces $\langle m,m+w_1,\ldots,m+w_{m-1}\rangle$ es un semigrupo numérico de máxima dimensión de inmersión. Esto deja patente la cantidad de semigrupos numéricos con máxima dimensión de inmersión. Nótese que $m+w_i>2m$ para todo $i$. Si escogemos un semigrupo numérico de máxima dimensión de inmersión, $\langle m,x_1,\ldots,x_{m-1}\rangle$ de forma que $x_i>2m$ para todo $i$, entonces $S=\langle m,x_1-m,\ldots,x_{m-1}-m\rangle$ es un semigrupo numérico con multiplicidad $m$ y $\operatorname{Ap}(S,m)=\lbrace 0,x_1-m,\ldots,x_{m-1}-m\rbrace$ . Por tanto, hay una correspondencia biunívoca entre los semigrupos numéricos de multiplicidad $m$ y los semigrupos numéricos de máxima dimensión de inmersión $m$ y con el resto de generadores mayores que el doble de $m$.
 
-Existen, como ya hemos visto, varias formas de caracterizar a los
-semigrupos numéricos de máxima dimensión de inmersión. Vamos a presentar
-otra caracterización que se presta a introducir una subclase bastante
-interesante. Esta caracterización nos permitirá además introducir un
-concepto más adelante en esta misma sesión. Un semigrupo numérico $S$
-con multiplicidad $m$ es de máxima dimensión de inmersión si y sólo si
-para cualesquiera elementos no nulos $x$ e $y$ de $S$, se tiene que
-$x+y-m\in S$. Gracias a esta caracterización aritmética, es fácil ver
-que la intersección de dos semigrupos numéricos de máxima dimensión de
-inmersión con multiplicidad $m$ vuelve a ser un semigrupo numérico de
-máxima dimensión de inmersión y multiplicidad $m$. Es más, si $S$ es de
-máxima dimensión y con número de Frobenius $g$, entonces $S\cup\lbrace g\rbrace$ 
-también es de máxima dimensión de inmersión.
+Existen, como ya hemos visto, varias formas de caracterizar a los semigrupos numéricos de máxima dimensión de inmersión. Vamos a presentar otra caracterización que se presta a introducir una subclase bastante interesante. Esta caracterización nos permitirá además introducir un concepto más adelante en esta misma sesión. Un semigrupo numérico $S$ con multiplicidad $m$ es de máxima dimensión de inmersión si y sólo si para cualesquiera elementos no nulos $x$ e $y$ de $S$, se tiene que $x+y-m\in S$. Gracias a esta caracterización aritmética, es fácil ver que la intersección de dos semigrupos numéricos de máxima dimensión de inmersión con multiplicidad $m$ vuelve a ser un semigrupo numérico de máxima dimensión de inmersión y multiplicidad $m$. Es más, si $S$ es de máxima dimensión y con número de Frobenius $g$, entonces $S\cup\lbrace g\rbrace$ también es de máxima dimensión de inmersión.
 
-Obsérvese que en la condición $x+y-m\in S$, estamos eligiendo
-$x,y\in S\setminus\lbrace 0\rbrace$ , o lo que es lo mismo, $x,y\in S$ con
-$x,y\geq m$. Una modificación natural de esta imposición es la
-siguiente: para cualesquiera $x$, $y$ y $z$ en $S$, con $x,y\geq z$, se
-tiene que $x+y-z\in S$. Un semigrupo numérico verificando esa propiedad
-es trivialmente de máxima dimensión de inmersión. Los semigrupos con esa
-condición se dice que tienen la propiedad de *Arf*. La intersección de
-dos semigrupos con la propiedad Arf es de nuevo Arf (ya no hace falta
-imponer que tengan la misma multiplicidad), y esta familia también es
-cerrada para la adjunción del número de Frobenius.
+Obsérvese que en la condición $x+y-m\in S$, estamos eligiendo $x,y\in S\setminus\lbrace 0\rbrace$ , o lo que es lo mismo, $x,y\in S$ con $x,y\geq m$. Una modificación natural de esta imposición es la siguiente: para cualesquiera $x$, $y$ y $z$ en $S$, con $x,y\geq z$, se tiene que $x+y-z\in S$. Un semigrupo numérico verificando esa propiedad es trivialmente de máxima dimensión de inmersión. Los semigrupos con esa condición se dice que tienen la propiedad de *Arf*. La intersección de dos semigrupos con la propiedad Arf es de nuevo Arf (ya no hace falta imponer que tengan la misma multiplicidad), y esta familia también es cerrada para la adjunción del número de Frobenius.
 
 ## Semigrupos numéricos proporcionalmente modulares
 
-Fijemos $m$ un elemento no nulo en un semigrupo numérico $S$. Recordemos
-que un entero $x$ pertenece a $S$ si y sólo si $w_{x\mod m}\leq x$,
-donde $w_i$ es el menor elemento de $S$ congruente con $i$ módulo $m$
-(precisamente los elementos de $\operatorname{Ap}(S,m)$). Si definimos $f_S:\mathbb{N} \to \mathbb{Q}$
-(como es habitual, $\mathbb{Q}$ es el conjunto de números racionales) como
-$f_S(x)=w_{x\mod m}$, entonces, en vista de las propiedades del conjunto
-de Apéry que vimos en la sesión anterior, $f_S(x+y)\leq f_S(x)+f_S(y)$.
-Además $f_S(x+m)=f_S(x)$. Por tanto, $f_S$ es subaditiva, $f_S(0)=0$ y
-es periódica de periodo $m$. Es más, 
+Fijemos $m$ un elemento no nulo en un semigrupo numérico $S$. Recordemos que un entero $x$ pertenece a $S$ si y sólo si $w_{x\mod m}\leq x$, donde $w_i$ es el menor elemento de $S$ congruente con $i$ módulo $m$ (precisamente los elementos de $\operatorname{Ap}(S,m)$). Si definimos $f_S:\mathbb{N} \to \mathbb{Q}$ (como es habitual, $\mathbb{Q}$ es el conjunto de números racionales) como $f_S(x)=w_{x\mod m}$, entonces, en vista de las propiedades del conjunto de Apéry que vimos en la sesión anterior, $f_S(x+y)\leq f_S(x)+f_S(y)$. Además $f_S(x+m)=f_S(x)$. Por tanto, $f_S$ es subaditiva, $f_S(0)=0$ y es periódica de periodo $m$. Es más, 
 
 $$S=\lbrace x\in \mathbb{N} \mid f_S(x)\leq x\rbrace .$$
 
-El recíproco de este hecho también es cierto. A saber, si tomamos una
-función subaditiva cualquiera $f$ con $f(0)=0$ y $f(x+m)=f(x)$ para todo
-entero no negativo $x$, entonces el conjunto
-
+El recíproco de este hecho también es cierto. A saber, si tomamos una función subaditiva cualquiera $f$ con $f(0)=0$ y $f(x+m)=f(x)$ para todo entero no negativo $x$, entonces el conjunto
 $$S_f=\lbrace x\in \mathbb{N} \mid f(x)\leq x\rbrace$$ 
 
 es un semigrupo numérico.
 
-Si elegimos $f(x)=\frac{1}c (ax\mod b)$, con $a$, $b$ y $c$ enteros positivos, obtenemos una función subaditiva con $f(0)=0$ y $f(x+b)=f(x)$
-para todo $x\in \mathbb{N}$. Por tanto,
+Si elegimos $f(x)=\frac{1}c (ax\mod b)$, con $a$, $b$ y $c$ enteros positivos, obtenemos una función subaditiva con $f(0)=0$ y $f(x+b)=f(x)$ para todo $x\in \mathbb{N}$. Por tanto,
 
 $$\operatorname{s}(a,b,c)=\lbrace  x\in \mathbb{N} \mid ax\mod b\leq cx\rbrace$$ 
 
-es un semigrupo numérico.
-A los semigrupos numéricos de esta forma se les llama *proporcionalmente
-modulares* (de hecho ésa es una representación proporcionalmente
-modular, que no es única). Apenas sabemos en general nada sobre la
-multiplicidad, género, número de Frobenius ... de $\operatorname{s}(a,b,c)$ en función
-de $a$, $b$ y $c$, aunque recientemente Vasco, Bullejos y Rosales han
-proporcionado métodos para calcularla con complejidad el algoritmo de
-Euclides.
+es un semigrupo numérico. A los semigrupos numéricos de esta forma se les llama *proporcionalmente modulares* (de hecho ésa es una representación proporcionalmente modular, que no es única). Apenas sabemos en general nada sobre la multiplicidad, género, número de Frobenius ... de $\operatorname{s}(a,b,c)$ en función de $a$, $b$ y $c$, aunque recientemente Vasco, Bullejos y Rosales han proporcionado métodos para calcularla con complejidad el algoritmo de Euclides.
 
-Éstos semigrupos se pueden caracterizar de otra forma bastante curiosa.
-Resultan ser el conjunto de enteros que pueden darse como numeradores de
-los racionales pertenecientes a un intervalo de números positivos
-(incluimos además el cero). Precisemos un poco más esta idea. Supongamos
-que $I$ es un intervalo no vacío de $\mathbb{Q}^+$. El submonoide de $\mathbb{Q}^+$
-generado por $I$ es $\bigcup_{k\in \mathbb{N}} kI$. Si lo cortamos con $\mathbb{N}$,
-obtenemos un semigrupo numérico. Vamos a denotarlo mediante $\operatorname{s}(I)$.
-Sobrecargamos la notación adrede, ya que
+Éstos semigrupos se pueden caracterizar de otra forma bastante curiosa. Resultan ser el conjunto de enteros que pueden darse como numeradores de los racionales pertenecientes a un intervalo de números positivos (incluimos además el cero). Precisemos un poco más esta idea. Supongamos que $I$ es un intervalo no vacío de $\mathbb{Q}^+$. El submonoide de $\mathbb{Q}^+$ generado por $I$ es $\bigcup_{k\in \mathbb{N}} kI$. Si lo cortamos con $\mathbb{N}$, obtenemos un semigrupo numérico. Vamos a denotarlo mediante $\operatorname{s}(I)$. Sobrecargamos la notación adrede, ya que
 
 $$\operatorname{s}(a,b,c)=\operatorname{s}\Big(\big[\frac{b}a,\frac{b}{a-c}\big]\Big)$$ 
 
-(al hacer
-las cuentas módulo $b$, podemos suponer que $a < b$; si $c\geq a$,
-entonces $\operatorname{s}(a,b,c)=\mathbb{N}$, por lo que suponemos también que $c < a < b$).
+(al hacer las cuentas módulo $b$, podemos suponer que $a < b$; si $c\geq a$, entonces $\operatorname{s}(a,b,c)=\mathbb{N}$, por lo que suponemos también que $c < a < b$).
 
-Si $S$ es un semigrupo numérico proporcionalmente modular y $g$ es su
-número Frobenius, entonces en general $S\cup \lbrace g\rbrace$  no es
-proporcionalmente modular, pero se demuestra que es la intersección
-finita de semigrupos numéricos que sí son proporcionalmente modulares.
-Usando esta idea no es difícil probar que los semigrupos que son
-intersección finita de proporcionalmente modulares forman una familia
-cerrada para intersecciones y para la adjunción del número de Frobenius.
+Si $S$ es un semigrupo numérico proporcionalmente modular y $g$ es su número Frobenius, entonces en general $S\cup \lbrace g\rbrace$  no es proporcionalmente modular, pero se demuestra que es la intersección finita de semigrupos numéricos que sí son proporcionalmente modulares. Usando esta idea no es difícil probar que los semigrupos que son intersección finita de proporcionalmente modulares forman una familia cerrada para intersecciones y para la adjunción del número de Frobenius.
 
-Decimos que un semigrupo numérico $S$ es *sistema proporcionalmente
-modular* si es la intersección de un número finito de semigrupos
-numéricos proporcionalmente modulares. Así, $S$ es el conjunto de
-soluciones enteras de un sistema de desigualdades de la forma: 
+Decimos que un semigrupo numérico $S$ es *sistema proporcionalmente modular* si es la intersección de un número finito de semigrupos numéricos proporcionalmente modulares. Así, $S$ es el conjunto de soluciones enteras de un sistema de desigualdades de la forma: 
 
 $$\left\lbrace 
 \begin{array}{c}
@@ -232,57 +79,20 @@ a_k x \mod b_k\leq c_k x,
 
 con $a_i,b_i,c_i$ enteros positivos.
 
-Urbano-Blanco y Rosales demostraron que cualquier semigrupo
-proporcionalmente modular es de la forma $\frac{\langle m,n\rangle}d$,
-donde en general, para un semigrupo $S$ y un entero positivo $d$, se
-define 
+Urbano-Blanco y Rosales demostraron que cualquier semigrupo proporcionalmente modular es de la forma $\frac{\langle m,n\rangle}d$, donde en general, para un semigrupo $S$ y un entero positivo $d$, se define 
 
 $$\frac{S}d=\lbrace  x\in \mathbb{N} \mid dx\in S\rbrace ,$$ 
 
-el cual vuelve a ser un
-semigrupo numérico. De esta forma, se sigue que cualquier semigrupo
-numérico sistema proporcionalmente modular se puede expresar como
-$\frac{\langle m_1,n_1\rangle}{d_1}\cap \cdots \cap \frac{\langle m_l,n_l\rangle}{d_l}$.
-Fuimos capaces de modificar convenientemente $m_i$ y $n_i$, obteniendo
-$d_1=\cdots=d_l$, y de forma que $m_i,n_i,d_i$ sean primos relativos. De
-esta forma probamos que la clase de semigrupos numéricos sistema
-proporcionalmente modulares son aquellos que admiten una descomposición
-de Toms, para los que Toms ha sido capaz de construir $C^*$-algebras
-cuyos grupos ordenados $K_0$ son isomorfos a $(\mathbb{Z},S)$.
+el cual vuelve a ser un semigrupo numérico. De esta forma, se sigue que cualquier semigrupo numérico sistema proporcionalmente modular se puede expresar como $\frac{\langle m_1,n_1\rangle}{d_1}\cap \cdots \cap \frac{\langle m_l,n_l\rangle}{d_l}$. Fuimos capaces de modificar convenientemente $m_i$ y $n_i$, obteniendo $d_1=\cdots=d_l$, y de forma que $m_i,n_i,d_i$ sean primos relativos. De esta forma probamos que la clase de semigrupos numéricos sistema proporcionalmente modulares son aquellos que admiten una descomposición de Toms, para los que Toms ha sido capaz de construir $C^*$-algebras cuyos grupos ordenados $K_0$ son isomorfos a $(\mathbb{Z},S)$.
 
 ## Variedades de semigrupos numéricos
 
-Como hemos visto anteriormente existen varias familias ${\mathcal F}$ de
-semigrupos numéricos verificando
+Como hemos visto anteriormente existen varias familias ${\mathcal F}$ de semigrupos numéricos verificando
 
--   si $S_1,S_2\in {\mathcal F}$, entonces
-    $S_1\cap S_2\in {\mathcal F}$,
+-   si $S_1,S_2\in {\mathcal F}$, entonces $S_1\cap S_2\in {\mathcal F}$,
 
--   si $S\in {\mathcal F}$ y $g$ es su número de Frobenius, entonces
-    $S\cup\lbrace g\rbrace \in {\mathcal F}$.
+-   si $S\in {\mathcal F}$ y $g$ es su número de Frobenius, entonces $S\cup\lbrace g\rbrace \in {\mathcal F}$.
 
-Dado un subconjunto no vacío $A$ de $\mathbb{N}$ con máximo divisor igual a uno,
-el conjunto de $T\in{\mathcal F}$ tales que $A\subseteq T$ es finito,
-por lo que podemos definir el semigrupo generado por $A$ en $F$ como la
-intersección de dichos semigrupo numéricos. Si $S$ es el semigrupo
-resultante, en este caso decimos que $A$ es un *${\mathcal F}$-sistema
-de generadores* de $S$, o que $S$ es la *${\mathcal F}$-clausura* de
-$\langle A\rangle$. Como es de esperar, decimos que $A$ es *minimal* si
-ningún subconjunto propio de $A$ ${\mathcal F}$-genera a $S$. Observamos
-de forma independiente que para las familias de semigrupos numéricos de
-máxima dimensión de inmersión y multiplicidad fija, semigrupos numéricos
-con la propiedad Arf, también para aquellos que son saturados, o bien
-que cumplen un patrón fuertemente admisible, y además para los
-semigrupos numéricos que admiten una descomposición de Toms, que los
-${\mathcal F}$-sistemas minimales eran únicos. La idea subyacente en
-todas estas familias es que verifican (C1) y (C2) (salvo para los de
-máxima dimensión de inmersión con multiplicidad fija...). Es más en
-todos estos casos un entero está en un ${\mathcal F}$-sistema minimal de
-generadores de $S$ si y sólo si $S\setminus \lbrace m\rbrace$  pertenece de nuevo a
-la familia ${\mathcal F}$, tal y como ocurre con los sistemas minimales
-de generadores de toda la vida. Este hecho permite construir
-recursivamente todas estas familias.
+Dado un subconjunto no vacío $A$ de $\mathbb{N}$ con máximo divisor igual a uno, el conjunto de $T\in{\mathcal F}$ tales que $A\subseteq T$ es finito, por lo que podemos definir el semigrupo generado por $A$ en $F$ como la intersección de dichos semigrupo numéricos. Si $S$ es el semigrupo resultante, en este caso decimos que $A$ es un *${\mathcal F}$-sistema de generadores* de $S$, o que $S$ es la *${\mathcal F}$-clausura* de $\langle A\rangle$. Como es de esperar, decimos que $A$ es *minimal* si ningún subconjunto propio de $A$ ${\mathcal F}$-genera a $S$. Observamos de forma independiente que para las familias de semigrupos numéricos de máxima dimensión de inmersión y multiplicidad fija, semigrupos numéricos con la propiedad Arf, también para aquellos que son saturados, o bien que cumplen un patrón fuertemente admisible, y además para los semigrupos numéricos que admiten una descomposición de Toms, que los ${\mathcal F}$-sistemas minimales eran únicos. La idea subyacente en todas estas familias es que verifican (C1) y (C2) (salvo para los de máxima dimensión de inmersión con multiplicidad fija...). Es más en todos estos casos un entero está en un ${\mathcal F}$-sistema minimal de generadores de $S$ si y sólo si $S\setminus \lbrace m\rbrace$  pertenece de nuevo a la familia ${\mathcal F}$, tal y como ocurre con los sistemas minimales de generadores de toda la vida. Este hecho permite construir recursivamente todas estas familias.
 
-Rosales demostró que estas dos condiciones son suficientes para probar
-la unicidad de ${\mathcal F}$-sistemas minimales de generadores.
-
+Rosales demostró que estas dos condiciones son suficientes para probar la unicidad de ${\mathcal F}$-sistemas minimales de generadores.
